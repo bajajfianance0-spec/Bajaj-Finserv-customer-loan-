@@ -1,0 +1,819 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loan Application Portal Pro - Sync Fixed v7</title>
+<style>
+:root{--p:#2563eb;--p2:#1d4ed8;--bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#64748b;--line:#e2e8f0;--ok:#16a34a;--warn:#d97706;--bad:#dc2626;--shadow:0 10px 30px #0f172a12}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff;padding:22px 5%;display:flex;justify-content:space-between;gap:15px;align-items:center}.brand{font-size:23px;font-weight:800}.brand small{display:block;font-size:11px;opacity:.75;font-weight:500}.wrap{max-width:1250px;margin:24px auto;padding:0 16px}.grid{display:grid;gap:18px}.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}h1,h2,h3{margin:0 0 12px}.muted{color:var(--muted)}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.btn{border:0;border-radius:10px;padding:10px 15px;background:var(--p);color:#fff;font-weight:700}.btn:hover{background:var(--p2)}.btn.secondary{background:#e8eefc;color:#1d4ed8}.btn.gray{background:#eef2f7;color:#334155}.btn.danger{background:#fee2e2;color:#991b1b}.btn.ok{background:#dcfce7;color:#166534}.btn.sm{padding:7px 10px;font-size:13px}.field{margin:10px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;background:#fff}.field textarea{min-height:90px;resize:vertical}.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}.tab{padding:10px 15px;border:1px solid var(--line);background:#fff;border-radius:10px;font-weight:700}.tab.active{background:#1d4ed8;color:#fff}.hidden{display:none!important}.hero{padding:26px;background:linear-gradient(135deg,#eff6ff,#fff);border-radius:18px;border:1px solid #bfdbfe}.stat{padding:18px;border-radius:15px;background:#fff;border:1px solid var(--line)}.stat b{display:block;font-size:25px;margin-top:5px}.badge{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800}.b-blue{background:#dbeafe;color:#1d4ed8}.b-green{background:#dcfce7;color:#166534}.b-orange{background:#ffedd5;color:#9a3412}.b-red{background:#fee2e2;color:#991b1b}.progress{height:12px;background:#e5e7eb;border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;background:linear-gradient(90deg,#2563eb,#22c55e)}.timeline{border-left:3px solid #bfdbfe;margin:10px 0 0 8px;padding-left:20px}.event{position:relative;padding:4px 0 18px}.event:before{content:'';position:absolute;left:-29px;top:4px;width:12px;height:12px;border-radius:50%;background:#2563eb;border:3px solid #dbeafe}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:720px}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f8fafc;font-size:13px}.notice{padding:12px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe;margin:10px 0}.success{background:#f0fdf4;border-color:#bbf7d0}.warning{background:#fffbeb;border-color:#fde68a}.dangerbox{background:#fef2f2;border-color:#fecaca}.doc{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:12px;margin:8px 0}.footer{text-align:center;color:var(--muted);padding:30px 10px}.modal{position:fixed;inset:0;background:#02061788;display:flex;align-items:center;justify-content:center;padding:15px;z-index:20}.modalbox{max-width:800px;width:100%;max-height:90vh;overflow:auto;background:#fff;border-radius:18px;padding:22px}.pillnav{display:flex;gap:8px;flex-wrap:wrap}.search{max-width:360px}.receipt{border:1px dashed #94a3b8;padding:18px;border-radius:14px;background:#fff}.dark{--bg:#0b1220;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--line:#263244}.dark .field input,.dark .field select,.dark .field textarea,.dark .tab,.dark th{background:#0f172a;color:#e5e7eb}.dark .hero{background:#0f172a}.dark .stat{background:#111827}.dark th{background:#0b1220}.paybox{border:1px solid #bfdbfe;background:#eff6ff;padding:14px;border-radius:12px;margin-top:10px}.site-info{margin-top:18px}.site-info h3{margin-bottom:8px}.site-logo{max-height:58px;max-width:180px;object-fit:contain;border-radius:10px;margin-right:10px}.brand-wrap{display:flex;align-items:center;gap:10px}.site-text{white-space:pre-wrap;line-height:1.6}.bank-profile-header{background:linear-gradient(135deg,#ffffff,#f8fbff);border:1px solid #bfdbfe;box-shadow:0 14px 35px #0f172a12}.bank-profile-header .stat{box-shadow:none}.bank-profile-header .customer-avatar{width:58px;height:58px}.dark .bank-profile-header{background:#111827}
+.customer-notice{border:1px solid #93c5fd;background:linear-gradient(135deg,#eff6ff,#fff);box-shadow:0 10px 25px #2563eb14}.customer-notice .notice-body{font-size:15px;line-height:1.75;word-break:break-word}.customer-notice .notice-body p{margin:0 0 14px}.customer-notice .notice-body p:last-child{margin-bottom:0}.customer-notice .notice-body h1,.customer-notice .notice-body h2,.customer-notice .notice-body h3,.customer-notice .notice-body h4{margin:8px 0 12px}.customer-notice .notice-body ul,.customer-notice .notice-body ol{padding-left:24px}.notice-editor{border:1px solid #cbd5e1;border-radius:12px;overflow:hidden;background:#fff}.notice-toolbar{display:flex;gap:6px;flex-wrap:wrap;padding:8px;border-bottom:1px solid #e2e8f0;background:#f8fafc}.notice-toolbar button{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 10px;font-weight:700;color:#334155}.notice-toolbar button:hover{background:#eff6ff}.notice-editable{min-height:320px;padding:14px;outline:0;line-height:1.7}.notice-editable:empty:before{content:attr(data-placeholder);color:#94a3b8}.dark .notice-editor{background:#0f172a;border-color:#334155}.dark .notice-toolbar{background:#0b1220;border-color:#334155}.dark .notice-toolbar button{background:#111827;color:#e5e7eb;border-color:#334155}.dark .notice-editable{color:#e5e7eb}
+/* Professional customer portal + mobile agent polish */
+.customer-topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff;border-radius:20px;box-shadow:0 14px 35px #0f172a25;margin-bottom:16px}.customer-identity{display:flex;align-items:center;gap:12px;min-width:0}.customer-avatar{width:54px;height:54px;border-radius:16px;object-fit:cover;background:#fff2;border:2px solid #ffffff55;display:grid;place-items:center;font-weight:900;font-size:21px}.customer-avatar.initials{background:#ffffff18}.customer-identity h2{margin:0;font-size:20px}.customer-identity small{display:block;color:#dbeafe;margin-top:3px}.customer-actions{display:flex;gap:7px;flex-wrap:wrap}.icon-btn{border:1px solid #ffffff38;background:#ffffff14;color:#fff;border-radius:11px;padding:9px 11px;font-weight:800;position:relative}.notif-count{position:absolute;right:-5px;top:-6px;background:#ef4444;color:#fff;border-radius:99px;min-width:18px;height:18px;font-size:10px;display:grid;place-items:center;border:2px solid #1d4ed8}.customer-mini-profile{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;margin-bottom:14px}.mini-avatar{width:40px;height:40px;border-radius:12px;object-fit:cover;background:#dbeafe;display:grid;place-items:center;font-weight:900;color:#1d4ed8}.notification-panel{position:fixed;right:16px;top:82px;width:min(390px,calc(100vw - 32px));max-height:70vh;overflow:auto;background:#fff;border:1px solid #cbd5e1;border-radius:18px;box-shadow:0 25px 70px #0f172a35;z-index:50;padding:14px}.notification-item{padding:12px;border:1px solid var(--line);border-radius:13px;margin:8px 0;background:#fff}.notification-item.unread{background:#eff6ff;border-color:#93c5fd}.notification-item b{display:block;margin-bottom:4px}.agent-mobile-actions{display:flex;gap:8px;flex-wrap:wrap}.agent-table-card{overflow:hidden}.agent-table-card .tablewrap{width:100%}.profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.profile-item{padding:11px 12px;background:#f8fafc;border:1px solid var(--line);border-radius:12px}.profile-item span{display:block;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}.profile-item b{display:block;margin-top:4px;word-break:break-word}.customer-nav{display:flex;gap:8px;overflow:auto;padding-bottom:3px;margin-bottom:14px}.customer-nav .btn{white-space:nowrap}.dark .customer-mini-profile,.dark .profile-item,.dark .notification-item{background:#0f172a}.dark .notification-panel{background:#111827;border-color:#334155}.dark .customer-mini-profile{border-color:#334155}
+@media(max-width:650px){.customer-topbar{padding:13px;border-radius:16px}.customer-actions{width:100%}.customer-topbar{align-items:flex-start}.customer-actions .icon-btn{flex:1}.profile-grid{grid-template-columns:1fr}.agent-table-card{overflow:visible}.agent-table-card .tablewrap{overflow-x:auto}.agent-table-card table{min-width:760px}.search{max-width:none;width:100%}.agent-mobile-actions{width:100%}.agent-mobile-actions .btn{flex:1}.notification-panel{top:70px}}
+.status-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}.status-step{text-align:center;padding:10px 6px;border:1px solid var(--line);border-radius:12px;background:#f8fafc;font-size:12px;font-weight:700}.status-step.active{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}.status-step.done{background:#f0fdf4;border-color:#86efac;color:#166534}.status-dot{display:block;width:12px;height:12px;border-radius:50%;margin:0 auto 6px;background:#cbd5e1}.status-step.active .status-dot{background:#2563eb}.status-step.done .status-dot{background:#16a34a}.summary-card{background:linear-gradient(135deg,#eff6ff,#fff);border-color:#bfdbfe}.support-card{background:linear-gradient(135deg,#f0fdf4,#fff);border-color:#bbf7d0}.faq-box{white-space:pre-wrap;line-height:1.6}@media(max-width:650px){.top{padding:18px 4%}.card{padding:15px}.wrap{margin:14px auto}.brand{font-size:19px}.status-steps{grid-template-columns:repeat(2,1fr)}.stat b{font-size:21px}.tablewrap table{min-width:560px}.btn{width:auto}}
+/* Home page redesign — scoped to #home only */
+#home{max-width:1180px;margin:0 auto}
+.home-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);gap:24px;align-items:center;padding:42px 40px;margin-bottom:18px;border:1px solid #bfdbfe;border-radius:24px;background:linear-gradient(135deg,#f8fbff 0%,#eef6ff 58%,#ffffff 100%);box-shadow:0 18px 45px #2563eb12}
+.home-hero:after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;right:-110px;top:-120px;background:#dbeafe88;pointer-events:none}
+.home-hero-copy{position:relative;z-index:1}.home-kicker,.home-label{display:inline-block;font-size:11px;letter-spacing:.12em;font-weight:800;color:#1d4ed8}.home-hero h1{font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:-.04em;margin:12px 0 14px}.home-hero h1 span{color:#2563eb}.home-hero p{max-width:650px;font-size:17px;line-height:1.65;margin:0 0 22px}.home-actions{display:flex;gap:10px;flex-wrap:wrap}.home-primary,.home-secondary{border:0;border-radius:12px;padding:13px 18px;font-weight:800;font-size:15px;cursor:pointer}.home-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;box-shadow:0 10px 24px #2563eb30}.home-secondary{background:#fff;color:#1d4ed8;border:1px solid #bfdbfe}.home-trust{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;color:#475569;font-size:12px;font-weight:700}.home-visual{position:relative;z-index:1;min-height:235px;display:flex;align-items:center;justify-content:center}.home-orb{width:142px;height:142px;border-radius:38px;display:grid;place-items:center;font-size:62px;background:linear-gradient(145deg,#dbeafe,#fff);border:1px solid #bfdbfe;box-shadow:0 20px 45px #2563eb22;transform:rotate(-5deg)}.home-mini-card{position:absolute;right:0;bottom:8px;width:205px;padding:15px;border-radius:16px;background:#fff;border:1px solid #e2e8f0;box-shadow:0 16px 35px #0f172a16}.home-mini-card span,.home-mini-card small{display:block;color:#64748b;font-size:11px}.home-mini-card b{display:block;margin:5px 0;font-size:17px}.home-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.home-stat{display:flex;align-items:center;gap:12px;padding:16px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 8px 22px #0f172a08}.home-stat-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#eff6ff;color:#2563eb;font-weight:900;font-size:19px;flex:none}.home-stat span{display:block;color:#64748b;font-size:12px}.home-stat b{display:block;font-size:22px;margin-top:3px}.home-tools{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.home-calculator,.home-access{padding:22px;border-radius:20px}.home-section-title{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.home-section-title h2,.home-access h2{margin:5px 0 5px}.home-section-title p,.home-access>p{margin:0 0 16px}.home-tool-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:#eff6ff;color:#2563eb;font-weight:900;font-size:20px}.home-calc-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.home-calc-fields .field{margin:4px 0}.home-calc-output{margin-bottom:0}.home-full{width:100%;font-size:16px;padding:14px;margin-top:4px}.home-access-note{margin-top:14px;padding:10px 12px;border-radius:10px;background:#f8fafc;color:#64748b;font-size:12px;line-height:1.5}.dark #home .home-hero{background:linear-gradient(135deg,#0f172a,#111827);border-color:#263244}.dark #home .home-stat,.dark #home .home-mini-card{background:#111827;border-color:#263244}.dark #home .home-secondary{background:#111827}.dark #home .home-access-note{background:#0f172a}.dark #home .home-orb{background:#0f172a;border-color:#263244}
+@media(max-width:800px){#home{margin:0}.home-hero{grid-template-columns:1fr;padding:28px 22px;gap:10px;border-radius:20px}.home-hero h1{font-size:39px}.home-hero p{font-size:15px}.home-visual{display:none}.home-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.home-tools{grid-template-columns:1fr}.home-calc-fields{grid-template-columns:1fr 1fr}.home-calc-fields .field:last-child{grid-column:1/-1}}
+@media(max-width:480px){.home-hero{padding:24px 18px}.home-hero h1{font-size:34px}.home-actions{display:grid;grid-template-columns:1fr 1fr}.home-primary,.home-secondary{width:100%;padding:12px 10px}.home-trust{gap:9px;font-size:11px}.home-stats{gap:8px}.home-stat{padding:12px 10px;gap:9px}.home-stat-icon{width:36px;height:36px;border-radius:10px;font-size:16px}.home-stat b{font-size:18px}.home-calc-fields{grid-template-columns:1fr}.home-calc-fields .field:last-child{grid-column:auto}.home-calculator,.home-access{padding:18px}.home-section-title h2,.home-access h2{font-size:20px}}
+
+.bank-contact-wrap{display:inline-flex;align-items:center;gap:10px;margin-top:4px;padding:10px 14px;border:1px solid #d7e2f0;border-radius:12px;background:#f6f9fd;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.bank-contact-icon{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;background:#eaf2ff;font-size:18px}
+.bank-contact-label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;margin-bottom:2px}
+.bank-contact-number{color:#173f8f;font-weight:800;text-decoration:none;letter-spacing:.02em;font-size:18px}
+</style></head><body>
+<header class="top"><div class="brand"><span class="brand-wrap"><img id="siteLogo" class="site-logo hidden" alt="Company logo"><span><span id="siteBrandName">🏦 Loan Application Portal</span><small id="siteBrandContact">Contact Us: +91 99420 08431 • Secure Loan Services • fast and transparent application support</small></span></span></div><div class="row"><button class="btn secondary sm" onclick="toggleTheme()">🌙 Theme</button><button class="btn gray sm" onclick="showHome()">Home</button></div></header>
+<main class="wrap">
+<div id="home">
+ <section class="home-hero">
+  <div class="home-hero-copy">
+   <span class="home-kicker">🏦 SECURE LOAN PORTAL</span>
+   <h1>Loan management,<br><span>made simple.</span></h1>
+   <p>Customer login, EMI tools, documents and payment requests — everything in one secure place.</p>
+   <div class="home-actions"><button class="home-primary" onclick="showCustomerLogin()">📱 Customer Login</button><button class="home-secondary" onclick="agentLogin()">Agent Login</button></div>
+   <div class="home-trust"><span>✓ Secure access</span><span>✓ Fast support</span><span>✓ Easy tracking</span></div>
+  </div>
+  <div class="home-visual">
+   <div class="home-orb">🏦</div>
+   <div class="home-mini-card"><span>Loan status</span><b>Easy to track</b><small>Application • EMI • Payments</small></div>
+  </div>
+ </section>
+ <section class="home-stats">
+  <div class="home-stat"><div class="home-stat-icon">📋</div><div><span>Applications</span><b id="homeApps">0</b></div></div>
+  <div class="home-stat"><div class="home-stat-icon">✓</div><div><span>Approved</span><b id="homeApproved">0</b></div></div>
+  <div class="home-stat"><div class="home-stat-icon">₹</div><div><span>Total Loan</span><b id="homeLoan">₹0</b></div></div>
+  <div class="home-stat"><div class="home-stat-icon">⏳</div><div><span>Pending Fees</span><b id="homeFees">₹0</b></div></div>
+ </section>
+ <section class="home-tools">
+  <div class="home-calculator card">
+   <div class="home-section-title"><div><span class="home-label">CALCULATOR</span><h2>Quick EMI Calculator</h2><p class="muted">Estimate your monthly EMI in seconds.</p></div><div class="home-tool-icon">₹</div></div>
+   <div class="home-calc-fields">
+    <div class="field"><label>Loan amount</label><input id="calcAmt" type="number" value="500000" oninput="calcEMI()"></div>
+    <div class="field"><label>Interest % / year</label><input id="calcRate" type="number" step="0.01" value="9.4" oninput="calcEMI()"></div>
+    <div class="field"><label>Tenure (months)</label><input id="calcTenure" type="number" value="72" oninput="calcEMI()"></div>
+   </div>
+   <div id="calcOut" class="notice success home-calc-output"></div>
+  </div>
+  <div class="home-access card">
+   <span class="home-label">CUSTOMER ACCESS</span><h2>Manage your application</h2><p class="muted">Use your registered mobile number to open your Customer Portal and check your loan details.</p>
+   <button class="home-primary home-full" onclick="showCustomerLogin()">📱 Open Customer Portal</button>
+   <div class="home-access-note">🔒 Your customer details are shown only after customer login.</div>
+  </div>
+ </section>
+ <div id="siteInfo" class="site-info"></div>
+</div>
+<div id="customer" class="hidden"></div>
+<div id="admin" class="hidden"></div>
+</main><div id="modal" class="hidden"></div><div class="card" style="margin-top:18px"><h3>Contact Us</h3><p class="muted">Call us:</p><div class="bank-contact-wrap"><span class="bank-contact-icon">☎</span><span><span class="bank-contact-label">Customer Care</span><a class="bank-contact-number" href="tel:+919942008431">+91 99420 08431</a></span></div><p class="muted">Address: CHS Plot No 62, Runwal Grand, SN 3 &amp; 4, Ground Floor, 946, Rd Number 18, near Gandhi Ground, Chembur, Mumbai, Maharashtra 400071</p></div><div class="footer">ℹ️ Support &amp; Contact: +91 99420 08431 • CHS Plot No 62, Runwal Grand, SN 3 &amp; 4, Ground Floor, 946, Rd Number 18, near Gandhi Ground, Chembur, Mumbai, Maharashtra 400071</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const K='loanpro_v1';
+const SUPABASE_URL='https://awaumlozjmassalxqfgm.supabase.co';
+const SUPABASE_KEY='sb_publishable_IMXt96Jnsy8L5forn7mNIQ_TAR4Y8Mm';
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let supabaseReady=false; let realtimeChannel=null; let currentCustomerId=null; let customerPollTimer=null;
+const CORE_COLUMNS=new Set(['id','name','mobile','application','amount','rate','tenure','fee','feepaid','status','message']);
+
+function normalizeSupabaseRow(r){
+  return {
+    id:r.id,
+    name:r.name||'',
+    mobile:String(r.mobile||'').replace(/\D/g,''),
+    application:r.application||'',
+    amount:Number(r.amount||0),
+    rate:Number(r.rate||0),
+    tenure:Number(r.tenure||0),
+    fee:Number(r.fee||0),
+     feeType:r.fee_type||r.feeType||'Processing Fee',
+    feePaid:!!(r.feepaid ?? r.feePaid),
+    status:r.status||'New',
+    message:r.message||'',
+    bank:r.bank||'',account:r.account||'',ifsc:r.ifsc||'',emi:r.emi||'',
+    dob:r.dob||'',email:r.email||'',address:r.address||'',occupation:r.occupation||'',
+    photo:r.photo||'',docs:Array.isArray(r.docs)?r.docs:[],
+    payments:Array.isArray(r.payments)?r.payments:[],
+    created:r.created_at||r.created||new Date().toISOString(),
+    updated:r.updated_at||r.updated||new Date().toISOString(),
+    history:Array.isArray(r.history)?r.history:[], upiId:r.upi_id||r.upiId||''
+  };
+}
+
+let supabaseColumns=null;
+
+async function getSupabaseColumns(){
+  // Do not select '*' here: customers may contain large base64 documents and
+  // that metadata probe itself can trigger a timeout. Use the known portal
+  // schema instead; unknown optional fields are simply ignored by supabaseRow.
+  if(supabaseColumns && supabaseColumns.size) return supabaseColumns;
+  supabaseColumns=new Set([...CORE_COLUMNS,'fee_type','bank','account','ifsc','emi','dob','email','address','occupation','photo','docs','payments','created','updated','history']);
+  return supabaseColumns;
+}
+
+function mergeCustomer(local, remote){
+  // Keep locally entered portal details when the Supabase table does not yet
+  // contain those columns, while always taking the Supabase identity/id.
+  const out={...local,...remote};
+  const fields=['name','mobile','application','amount','rate','tenure','fee','feeType','feePaid','status','message','bank','account','ifsc','emi','dob','email','address','occupation','photo','docs','payments','created','updated','history','upiId'];
+  for(const f of fields){
+    const rv=remote[f];
+    const empty=rv===undefined||rv===null||rv===''||(Array.isArray(rv)&&rv.length===0);
+    if(empty && local && local[f]!==undefined) out[f]=local[f];
+  }
+  return out;
+}
+
+function supabaseRow(c, columns){
+  const all={
+    id:String(c.id||''), name:c.name||'', mobile:String(c.mobile||''), application:c.application||'',
+    amount:Number(c.amount||0), rate:Number(c.rate||0), tenure:Number(c.tenure||0),
+    fee:Number(c.fee||0), fee_type:c.feeType||'Processing Fee', feepaid:!!c.feePaid, status:c.status||'New', message:c.message||'',
+    bank:c.bank||'', account:c.account||'', ifsc:c.ifsc||'', emi:c.emi||'',
+    dob:c.dob||'', email:c.email||'', address:c.address||'', occupation:c.occupation||'',
+    photo:c.photo||'', docs:Array.isArray(c.docs)?c.docs:[], payments:Array.isArray(c.payments)?c.payments:[],
+    updated:c.updated||new Date().toISOString(), history:Array.isArray(c.history)?c.history:[]
+  };
+  const row={};
+  const cols=(columns&&columns.size)?columns:CORE_COLUMNS;
+  for(const [k,v] of Object.entries(all)) if(cols.has(k)) row[k]=v;
+  return row;
+}
+
+function persistLocal(){
+  // Keep large photo/document payloads out of localStorage. The full record
+  // remains in memory and is persisted to Supabase separately.
+  try{
+    const slim=structuredClone(db);
+    slim.customers=(slim.customers||[]).map(c=>{
+      const x={...c};
+      delete x.photo;
+      delete x.docs;
+      return x;
+    });
+    localStorage.setItem(K,JSON.stringify(slim));
+  }catch(e){ console.warn('Local cache save skipped:',e); }
+}
+
+async function syncFromSupabase(){
+  try{
+    const {data,error}=await supabaseClient.from('customers').select('*').order('id',{ascending:true});
+    if(error) throw error;
+    if(Array.isArray(data) && data.length){
+      supabaseColumns=new Set(Object.keys(data[0]));
+      const incoming=data.map(normalizeSupabaseRow);
+      for(const remote of incoming){
+        const i=db.customers.findIndex(x=>String(x.mobile).replace(/\D/g,'')===remote.mobile);
+        if(i>=0){ db.customers[i]=mergeCustomer(db.customers[i],remote); }
+        else db.customers.push(remote);
+      }
+      persistLocal();
+    }
+    supabaseReady=true;
+    const ss=document.getElementById('syncStatus'); if(ss) ss.textContent='Database: connected';
+    refreshHome();
+  }catch(e){
+    console.warn('Supabase sync failed:',e);
+    supabaseReady=false;
+  }
+}
+
+async function syncCustomerToSupabase(c){
+  try{
+    const columns=await getSupabaseColumns();
+    const rawId=c?.id;
+    const numericId=(rawId!==undefined && rawId!==null && String(rawId).trim()!=='' && /^\d+$/.test(String(rawId))) ? Number(rawId) : null;
+    const looksNew=!numericId && String(rawId||'').startsWith('C');
+
+    // IMPORTANT: save the lightweight customer fields first. Large base64
+    // photos/documents are intentionally NOT sent with every customer edit.
+    const full=supabaseRow(c,columns);
+    const attachmentKeys=['photo','docs','payments','history'];
+    const core={...full};
+    attachmentKeys.forEach(k=>delete core[k]);
+    delete core.id;
+
+    let result;
+    if(!looksNew && rawId!==undefined && rawId!==null && String(rawId)!==''){
+      if(numericId!==null){
+        result=await supabaseClient.from('customers').update(core).eq('id',numericId);
+      }else{
+        // Older local/demo records can still have a temporary C... id while
+        // Supabase uses a BIGINT id. Resolve those records by registered mobile.
+        const lookup=await supabaseClient.from('customers').select('id').eq('mobile',String(c.mobile||'')).maybeSingle();
+        if(lookup.error && lookup.error.code!=='PGRST116') throw lookup.error;
+        if(lookup.data?.id!==undefined){
+          c.id=lookup.data.id;
+          result=await supabaseClient.from('customers').update(core).eq('id',lookup.data.id);
+        }else{
+          const newId=Number(String(Date.now()).slice(-12));
+          c.id=newId;
+          core.id=newId;
+          result=await supabaseClient.from('customers').insert(core);
+        }
+      }
+      if(result.error) throw result.error;
+      if(result.data?.id!==undefined) c.id=result.data.id;
+    }else{
+      // The Supabase customers.id column is BIGINT without a default in the
+      // current database. Never send the temporary C... browser id to it.
+      const newId=Number(String(Date.now()).slice(-12));
+      c.id=newId;
+      core.id=newId;
+      result=await supabaseClient.from('customers').insert(core);
+      if(result.error) throw result.error;
+      if(result.data?.id!==undefined) c.id=result.data.id;
+    }
+
+    // Save attachments/history separately only when explicitly marked dirty.
+    // This prevents a normal customer edit from repeatedly sending megabytes
+    // of document data and avoids the Supabase 57014 statement timeout.
+    let attachmentWarning='';
+    if(c.__attachmentsDirty){
+      const attachments={};
+      for(const k of attachmentKeys) if(columns.has(k)) attachments[k]=full[k];
+      if(Object.keys(attachments).length){
+        const idValue=/^\d+$/.test(String(c.id||'')) ? Number(c.id) : c.id;
+        const ares=await supabaseClient.from('customers').update(attachments).eq('id',idValue);
+        if(ares.error){
+          attachmentWarning=[ares.error.message,ares.error.code].filter(Boolean).join(' | ');
+          console.warn('Customer core saved, but attachment sync failed:',attachmentWarning);
+        }
+      }
+      delete c.__attachmentsDirty;
+    }
+
+    // The core customer record has already been saved. Attachment timeout must
+    // not make the whole Customer Save appear to have failed.
+    supabaseReady=true;
+    persistLocal();
+    window.__lastAttachmentWarning=attachmentWarning;
+    return true;
+  }catch(e){
+    supabaseReady=false;
+    console.error('Supabase customer sync failed:',e);
+    const msg=[e?.message,e?.details,e?.hint,e?.code].filter(Boolean).join(' | ');
+    window.__lastSupabaseError=msg;
+    return false;
+  }
+}
+function showSupabaseSaveError(action){
+  const msg=window.__lastSupabaseError||'Unknown Supabase error';
+  alert(action+' database me save nahi hua.\n\nSupabase error:\n'+msg);
+}
+
+async function deleteCustomerFromSupabase(id){
+  try{
+    const q=supabaseClient.from('customers').delete();
+    const numeric=Number(id);
+    const result=Number.isFinite(numeric)&&String(id).trim()!=='' ? await q.eq('id',numeric) : await q.eq('id',id);
+    if(result.error) throw result.error;
+    return true;
+  }catch(e){console.warn('Supabase delete failed:',e);return false;}
+}
+
+const seed={customers:[{id:'C001',name:'Rahul Kumar',mobile:'9876543210',application:'APP-1001',amount:500000,rate:9.4,tenure:72,fee:1550,feeType:'Processing Fee',status:'Under Review',message:'Your application is under review.',bank:'',account:'',ifsc:'',emi:'',dob:'',email:'',address:'',occupation:'',photo:'',docs:[],payments:[],created:new Date().toISOString(),updated:new Date().toISOString(),history:[{status:'Application Submitted',date:new Date().toISOString(),note:'Application received'}]}],fees:[],audit:[]};
+function load(){let x=localStorage.getItem(K);if(!x){localStorage.setItem(K,JSON.stringify(seed));return structuredClone(seed)}try{return JSON.parse(x)}catch(e){localStorage.setItem(K,JSON.stringify(seed));return structuredClone(seed)}}let db=load();function save(){
+  persistLocal();
+  refreshHome();
+}
+function money(n){return '₹'+Number(n||0).toLocaleString('en-IN',{maximumFractionDigits:2})}function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}function badge(s){let c=s==='Approved'||s==='Paid'?'b-green':s==='Rejected'||s==='Failed'?'b-red':s==='Under Review'||s==='Pending'?'b-orange':'b-blue';return `<span class="badge ${c}">${esc(s)}</span>`}function log(action,detail=''){db.audit.unshift({date:new Date().toISOString(),action,detail});db.audit=db.audit.slice(0,300)}
+const SITE_SETTINGS_KEY='loanpro_site_settings_v1';
+function defaultSiteSettings(){return {brandName:'Loan Application Portal',brandContact:'Contact Us: +91 99420 08431 • Secure Loan Services • fast and transparent application support',logo:'',support:'',terms:'',privacy:'',disclaimer:'',apr:'',interest:'',faq:''}}
+function getSiteSettings(){try{return {...defaultSiteSettings(),...(JSON.parse(localStorage.getItem(SITE_SETTINGS_KEY)||'{}')||{})}}catch(e){return defaultSiteSettings()}}
+async function loadSiteSettingsFromSupabase(){
+  try{
+    const {data,error}=await supabaseClient.from('website_settings').select('*').eq('id',1).maybeSingle();
+    if(error) throw error;
+    if(data){
+      const remote={brandName:data.company_name||'',brandContact:data.header_contact||'',logo:data.logo||'',support:data.customer_support||'',apr:data.apr_interest||'',interest:data.interest||'',disclaimer:data.disclaimer||'',terms:data.terms||'',privacy:data.privacy||'',faq:data.faq||{}};
+      const merged={...defaultSiteSettings(),...remote};
+      localStorage.setItem(SITE_SETTINGS_KEY,JSON.stringify(merged));
+      return merged;
+    }
+  }catch(e){
+    console.warn('Website settings Supabase read failed:',e);
+    window.__websiteSettingsError=[e?.message,e?.details,e?.hint,e?.code].filter(Boolean).join(' | ');
+  }
+  return getSiteSettings();
+}
+async function saveSiteSettingsData(x){
+  localStorage.setItem(SITE_SETTINGS_KEY,JSON.stringify(x));
+  renderSiteInfo();renderBranding();
+  try{
+    const row={id:1,company_name:x.brandName||'',header_contact:x.brandContact||'',logo:x.logo||'',customer_support:x.support||'',apr_interest:x.apr||'',interest:x.interest||'',disclaimer:x.disclaimer||'',terms:x.terms||'',privacy:x.privacy||'',faq:x.faq||'',updated_at:new Date().toISOString()};
+    const {error}=await supabaseClient.from('website_settings').upsert(row,{onConflict:'id'});
+    if(error) throw error;
+    window.__websiteSettingsError='';
+    return true;
+  }catch(e){
+    console.warn('Website settings Supabase save failed:',e);
+    window.__websiteSettingsError=[e?.message,e?.details,e?.hint,e?.code].filter(Boolean).join(' | ');
+    return false;
+  }
+}
+function renderBranding(){let s=getSiteSettings();let n=document.getElementById('siteBrandName'),ct=document.getElementById('siteBrandContact'),lg=document.getElementById('siteLogo');if(n)n.textContent='🏦 '+(s.brandName||'Loan Application Portal');if(ct)ct.textContent=s.brandContact||'';if(lg){if(s.logo){lg.src=s.logo;lg.classList.remove('hidden')}else{lg.removeAttribute('src');lg.classList.add('hidden')}}}
+function renderSiteInfo(){let el=document.getElementById('siteInfo');if(!el)return;let s=getSiteSettings();let blocks=[['Customer Support / Help',s.support],['APR / Interest Information',s.apr],['Loan Disclaimer / Important Disclosure',s.disclaimer],['Terms & Conditions',s.terms],['Privacy Policy',s.privacy],['FAQ',s.faq]].filter(x=>String(x[1]||'').trim());el.innerHTML=blocks.map(x=>`<section class="card"><h3>${esc(x[0])}</h3><div class="site-text">${esc(x[1])}</div></section>`).join('')}
+async function initSiteContent(){renderBranding();renderSiteInfo();await loadSiteSettingsFromSupabase();renderBranding();renderSiteInfo()}
+function showHome(){document.getElementById('notificationPanel')?.remove();clearCustomerPolling();currentCustomerId=null;document.getElementById('home').classList.remove('hidden');document.getElementById('customer').classList.add('hidden');document.getElementById('admin').classList.add('hidden');refreshHome()}function hideAll(){['home','customer','admin'].forEach(x=>document.getElementById(x).classList.add('hidden'))}function refreshHome(){document.getElementById('homeApps').textContent=db.customers.filter(c=>c.status!=='Deleted').length;document.getElementById('homeApproved').textContent=db.customers.filter(x=>x.status==='Approved').length;document.getElementById('homeLoan').textContent=money(db.customers.reduce((a,x)=>a+Number(x.amount||0),0));document.getElementById('homeFees').textContent=money(db.customers.reduce((a,x)=>a+(x.fee&&!x.feePaid?Number(x.fee):0),0));calcEMI()}
+function calcEMI(){let P=+document.getElementById('calcAmt')?.value||0,r=(+document.getElementById('calcRate')?.value||0)/1200,n=+document.getElementById('calcTenure')?.value||0;let emi=r?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):(n?P/n:0);let total=emi*n;let o=document.getElementById('calcOut');if(o)o.innerHTML=`<b>Monthly EMI: ${money(emi)}</b><br>Total payable: ${money(total)}<br>Total interest: ${money(total-P)}`}
+function showCustomerLogin(){clearCustomerPolling();hideAll();const c=document.getElementById('customer');c.classList.remove('hidden');c.innerHTML=`<div class="card" style="max-width:620px;margin:28px auto;padding:28px;border:2px solid #bfdbfe;box-shadow:0 20px 50px #2563eb18"><div style="text-align:center;margin-bottom:22px"><div style="font-size:42px;margin-bottom:8px">📱</div><h2 style="margin-bottom:6px">Customer Login</h2><p class="muted">Apna registered mobile number yahan enter karein.</p></div><div class="notice success" style="margin-bottom:18px"><b>Registered Mobile Number</b><br><span class="muted">Wahi 10-digit mobile number enter karein jo aapki loan application me registered hai.</span></div><div class="field"><label style="font-size:15px">Registered Mobile Number</label><input id="loginMob" maxlength="10" inputmode="numeric" autocomplete="tel" placeholder="Example: 9876543210" style="font-size:20px;padding:15px;text-align:center;letter-spacing:1px"></div><button class="btn" style="width:100%;font-size:16px;padding:13px" onclick="customerLogin(document.getElementById('loginMob').value)">Continue to Customer Portal →</button><button class="btn gray" style="width:100%;margin-top:10px" onclick="showHome()">← Back to Home</button></div>`;setTimeout(()=>{
+  const inp=document.getElementById('loginMob');
+  if(inp){
+    inp.focus();
+    inp.onkeydown=(e)=>{if(e.key==='Enter') customerLogin(inp.value)};
+  }
+},50)}
+async function customerLogin(m){
+  m=String(m||'').replace(/\D/g,'');
+  if(m.length!==10){ alert('Please enter a valid 10-digit mobile number.'); return; }
+  try{
+    // Customer login must use a small, reliable lookup. Do not request large
+    // photo/document/payment/history fields during the login request.
+    // Also do not order by an optional timestamp column here.
+    const {data,error}=await supabaseClient.from('customers')
+      .select('id,name,mobile,application,amount,rate,tenure,fee,feepaid,status,message,bank,account,ifsc,emi,dob,email,address,occupation,created,updated')
+      .eq('mobile',m)
+      .limit(1);
+    if(error) throw error;
+    if(data && data.length){
+      const remote=normalizeSupabaseRow(data[0]);
+      const i=db.customers.findIndex(x=>String(x.mobile).replace(/\D/g,'')===m);
+      const c=i>=0?mergeCustomer(db.customers[i],remote):remote;
+      if(i>=0) db.customers[i]=c; else db.customers.push(c);
+      persistLocal();
+      hideAll();
+      document.getElementById('customer').classList.remove('hidden');
+      renderCustomer(c.id);
+      return;
+    }
+    const local=db.customers.find(x=>String(x.mobile).replace(/\D/g,'')===m);
+    if(local){
+      hideAll();
+      document.getElementById('customer').classList.remove('hidden');
+      renderCustomer(local.id);
+      return;
+    }
+    alert('Customer not found in Supabase. Please save/register this mobile from the Agent Panel first.');
+  }catch(e){
+    console.error('Customer login failed:',e);
+    // If the same customer is already cached locally, never block login just
+    // because an optional Supabase field/API request failed.
+    const local=db.customers.find(x=>String(x.mobile).replace(/\D/g,'')===m);
+    if(local){
+      hideAll();
+      document.getElementById('customer').classList.remove('hidden');
+      renderCustomer(local.id);
+      return;
+    }
+    alert('Supabase customer lookup failed. Check the customers table RLS/API access.');
+  }
+}
+function statusStepper(status){
+  const order=['New','Under Review','Approved','Disbursed'];
+  let current=status==='Rejected'?2:(order.indexOf(status)>=0?order.indexOf(status):0);
+  return `<div class="status-steps">${order.map((x,i)=>`<div class="status-step ${i<current?'done':i===current?'active':''}"><span class="status-dot"></span>${x}</div>`).join('')}</div>`;
+}
+function sanitizeCustomerNotice(html){
+  const doc=new DOMParser().parseFromString(String(html||''),'text/html');
+  const allowed=new Set(['P','DIV','BR','STRONG','B','EM','I','U','UL','OL','LI','H1','H2','H3','H4']);
+  const clean=(node)=>{
+    [...node.childNodes].forEach(child=>{
+      if(child.nodeType===1){
+        if(!allowed.has(child.tagName)){
+          const frag=document.createDocumentFragment();
+          while(child.firstChild)frag.appendChild(child.firstChild);
+          child.replaceWith(frag);
+          return;
+        }
+        [...child.attributes].forEach(a=>child.removeAttribute(a.name));
+        clean(child);
+      }else if(child.nodeType===8){child.remove()}
+    });
+  };
+  clean(doc.body);
+  return doc.body.innerHTML.trim();
+}
+function customerNoticeHtml(c){
+  const raw=String(c?.message||'').trim();
+  if(!raw)return '';
+  // Older messages were plain text. Keep them readable without treating them as HTML.
+  if(!/<[a-z][\s\S]*>/i.test(raw)) return `<p>${esc(raw).replace(/\n/g,'<br>')}</p>`;
+  return sanitizeCustomerNotice(raw);
+}
+function execNoticeCommand(cmd,value){
+  document.getElementById('customerNoticeEditor')?.focus();
+  document.execCommand(cmd,false,value||null);
+}
+function setNoticeBlock(tag){
+  document.getElementById('customerNoticeEditor')?.focus();
+  document.execCommand('formatBlock',false,tag);
+}
+function loadCustomerNotice(){
+  const id=document.getElementById('noticeCustomer')?.value;
+  const c=db.customers.find(x=>String(x.id)===String(id));
+  const editor=document.getElementById('customerNoticeEditor');
+  if(c&&editor)editor.innerHTML=customerNoticeHtml(c);
+}
+async function agentLogin(){modal(`<h2>Agent Login</h2><div class="field"><label>Password</label><input id="adminPass" type="password" placeholder="Enter admin password"></div><button class="btn" onclick="if(document.getElementById('adminPass').value==='admin123'){closeModal();renderAdmin()}else alert('Wrong password')">Login</button>`)}
+function renderAdmin(){clearCustomerPolling();currentCustomerId=null;hideAll();let el=document.getElementById('admin');el.classList.remove('hidden');let total=db.customers.reduce((a,c)=>a+Number(c.amount||0),0);el.innerHTML=`<div class="row between"><div><h2>Agent Dashboard</h2><p class="muted">Customer, loan, document and payment management</p><div id="syncStatus" class="notice">Database: checking…</div></div><div class="row"><button class="btn secondary sm" onclick="exportCSV()">Export CSV</button><button class="btn secondary sm" onclick="backup()">Backup</button><button class="btn gray sm" onclick="restore()">Restore</button><button class="btn danger sm" onclick="clearDemo()">Reset Data</button><button class="btn gray sm" onclick="showHome()">Logout</button></div></div><div class="grid g3" style="margin-top:16px"><div class="stat">Customers<b>${db.customers.length}</b></div><div class="stat">Loan Book<b>${money(total)}</b></div><div class="stat">Approved<b>${db.customers.filter(c=>c.status==='Approved').length}</b></div></div><div class="tabs" style="margin-top:18px"><button class="tab active" onclick="adminTab('customers',this)">Customers</button><button class="tab" onclick="adminTab('fees',this)">Fees</button><button class="tab" onclick="adminTab('payments',this)">Payments</button><button class="tab" onclick="adminTab('notifications',this)">Notifications</button><button class="tab" onclick="adminTab('audit',this)">Audit Log</button><button class="tab" onclick="adminTab('tools',this)">Tools</button><button class="tab" onclick="adminTab('notice',this)">Customer Notice</button><button class="tab" onclick="adminTab('content',this)">Website Content</button></div><div id="adminContent"></div>`;adminCustomers()}
+function loadCustomerMessage(){let id=document.getElementById('msgCustomer')?.value;let c=db.customers.find(x=>String(x.id)===String(id));let box=document.getElementById('agentMessage');if(c&&box)box.value=c.message||''}
+async function sendCustomerMessage(){
+  let id=document.getElementById('msgCustomer')?.value;
+  let box=document.getElementById('agentMessage');
+  let c=db.customers.find(x=>String(x.id)===String(id));
+  if(!c||!box)return;
+  let msg=box.value.trim();
+  if(!msg){alert('Please write a message first.');return}
+  c.message=msg; c.updated=new Date().toISOString();
+  const ok=await syncCustomerToSupabase(c);
+  if(!ok){showSupabaseSaveError('Message');return}
+  log('Message Sent',c.name+': '+msg);
+  persistLocal(); refreshHome(); loadCustomerMessage();
+  alert('Message customer portal me save ho gaya.');
+}
+function adminTab(t,b){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');({customers:adminCustomers,fees:adminFees,payments:adminPayments,notifications:adminNotifications,audit:adminAudit,tools:adminTools,notice:adminCustomerNotice,content:adminContent}[t])()}
+function adminCustomers(){document.getElementById('adminContent').innerHTML=`<div class="card"><div class="row between"><h3>Customer List</h3><div class="row"><input class="search" id="search" placeholder="Search name/mobile/application" oninput="filterCustomers()"><button class="btn" onclick="editCustomer()">+ Add Customer</button></div></div><div class="tablewrap"><table><thead><tr><th>Customer</th><th>Application / Reference</th><th>Loan</th><th>Status</th><th>Fee</th><th>Actions</th></tr></thead><tbody id="custRows"></tbody></table></div></div>`;filterCustomers()}
+function filterCustomers(){let q=(document.getElementById('search')?.value||'').toLowerCase();let rows=db.customers.filter(c=>c.status!=='Deleted' && (c.name+' '+c.mobile+' '+c.application).toLowerCase().includes(q));document.getElementById('custRows').innerHTML=rows.map(c=>`<tr><td><b>${esc(c.name)}</b><br><small>${esc(c.mobile)}</small></td><td>${esc(c.application)}<br><small>${esc(c.referenceNo||c.application)}</small></td><td>${money(c.amount)}</td><td>${badge(c.status)}</td><td>${money(c.fee)} ${c.feePaid?badge('Paid'):''}</td><td><button class="btn sm" onclick="editCustomer('${c.id}')">Edit</button> <button class="btn sm secondary" onclick="viewAsCustomer('${c.id}')">View</button> <button class="btn sm danger" onclick="deleteCustomer('${c.id}')">Delete</button></td></tr>`).join('')||'<tr><td colspan="6">No customers found.</td></tr>'}
+function editCustomer(id=''){let c=id?db.customers.find(x=>String(x.id)===String(id)):{id:'C'+Date.now(),referenceNo:'',name:'',mobile:'',application:'APP-'+Date.now().toString().slice(-5),amount:0,rate:9.4,tenure:72,fee:0,feeType:'Processing Fee',status:'New',message:'',upiId:'',bank:'',account:'',ifsc:'',emi:'',dob:'',email:'',address:'',occupation:'',photo:'',docs:[],payments:[],created:new Date().toISOString(),updated:new Date().toISOString(),history:[]};let isNew=!id;modal(`<h2>${isNew?'Add':'Edit'} Customer</h2><div class="grid g2"><div class="field"><label>Name</label><input id="f_name" value="${esc(c.name)}"></div><div class="field"><label>Mobile</label><input id="f_mobile" maxlength="10" value="${esc(c.mobile)}"></div><div class="field"><label>Application ID / Reference No.</label><input id="f_app" value="${esc(c.application||c.referenceNo||'APP-'+Date.now().toString().slice(-5))}"></div><div class="field"><label>Loan Amount</label><input id="f_amount" type="number" value="${c.amount}"></div><div class="field"><label>Interest %</label><input id="f_rate" type="number" step="0.01" value="${c.rate}"></div><div class="field"><label>Tenure Months</label><input id="f_tenure" type="number" value="${c.tenure}"></div><div class="field"><label>Date of Birth</label><input id="f_dob" type="date" value="${esc(c.dob||'')}"></div><div class="field"><label>Email</label><input id="f_email" type="email" value="${esc(c.email||'')}"></div><div class="field"><label>Occupation</label><input id="f_occupation" value="${esc(c.occupation||'')}"></div><div class="field"><label>Address</label><textarea id="f_address">${esc(c.address||'')}</textarea></div><div class="field"><label>Fee Amount (₹)</label><input id="f_fee" type="number" value="${c.fee}"></div><div class="field"><label>Fee Name / Purpose</label><input id="f_feeType" value="${esc(c.feeType||'Processing Fee')}" placeholder="e.g. Document Verification Fee"></div><div class="field"><label>Status</label><select id="f_status">${['New','Under Review','Approved','Rejected','Disbursed','Closed'].map(s=>`<option ${c.status===s?'selected':''}>${s}</option>`).join('')}</select></div><div class="field"><label>Bank</label><input id="f_bank" value="${esc(c.bank)}"></div><div class="field"><label>A/C Number</label><input id="f_account" value="${esc(c.account)}"></div><div class="field"><label>IFSC</label><input id="f_ifsc" value="${esc(c.ifsc)}"></div><div class="field"><label>EMI (optional override)</label><input id="f_emi" type="number" value="${c.emi||''}"></div></div><div class="field"><label>Payment UPI ID</label><input id="f_upi" placeholder="example@upi" value="${esc(c.upiId||localStorage.getItem('loan_upi_id')||'')}"><small class="muted">Save this UPI ID with this customer.</small></div><div class="field"><label>Photo</label><input id="f_photo" type="file" accept="image/*"></div><div class="field"><label>Documents (PDF/images)</label><input id="f_docs" type="file" multiple accept="image/*,.pdf,.doc,.docx"></div><div id="existingDocs">${(c.docs||[]).map((d,i)=>`<div class="doc">${esc(d.name)} <button class="btn sm danger" onclick="removeDoc('${c.id}',${i})">Remove</button></div>`).join('')}</div><button class="btn" onclick="saveCustomer('${c.id}',${isNew})">Save Customer</button>`)}
+
+/* ===== PORTAL REPAIR: customer save, admin notifications ===== */
+function adminNotifications(){
+  const items=[];
+  db.customers.filter(c=>c.status!=='Deleted').forEach(c=>{
+    if(c.message)items.push({date:c.updated||c.created,name:c.name,application:c.application,text:c.message,type:'Customer message'});
+    if(c.fee && !c.feePaid)items.push({date:c.updated||c.created,name:c.name,application:c.application,text:`${c.feeType||'Processing Fee'} • ${money(c.fee)} pending`,type:'Payment request'});
+    (c.payments||[]).filter(p=>p.status==='Pending Verification').forEach(p=>items.push({date:p.date,name:c.name,application:c.application,text:`UTR ${p.txn||'-'} • ${money(p.amount||c.fee)}`,type:'Payment verification'}));
+  });
+  items.sort((a,b)=>new Date(b.date)-new Date(a.date));
+  document.getElementById('adminContent').innerHTML=`<div class="card"><div class="row between"><div><h3>Notifications</h3><p class="muted">Customer messages, payment requests and payment-verification alerts.</p></div><button class="btn gray sm" onclick="adminNotifications()">Refresh</button></div>${items.length?items.slice(0,100).map(n=>`<div class="notification"><div class="row between"><b>${esc(n.type)}</b><small class="muted">${new Date(n.date).toLocaleString()}</small></div><div style="margin-top:5px"><b>${esc(n.name)}</b> <span class="muted">• ${esc(n.application||'')}</span></div><div style="margin-top:5px">${esc(n.text)}</div></div>`).join(''):'<div class="notice success">No new notifications.</div>'}</div>`;
+}
+function readFile(f){return new Promise((res,rej)=>{
+  if(!f)return res(null);
+  if(!f.type||!f.type.startsWith('image/')){
+    const r=new FileReader();r.onload=()=>res({name:f.name,type:f.type||'application/octet-stream',size:f.size,data:r.result});r.onerror=rej;r.readAsDataURL(f);return;
+  }
+  const img=new Image(),url=URL.createObjectURL(f);
+  img.onload=()=>{
+    try{
+      const max=1400,scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));
+      const canvas=document.createElement('canvas');
+      canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));
+      canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
+      const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,canvas.width,canvas.height);
+      canvas.toBlob(blob=>{
+        if(!blob){URL.revokeObjectURL(url);return rej(new Error('Image compression failed'));}
+        const reader=new FileReader();
+        reader.onload=()=>{URL.revokeObjectURL(url);res({name:f.name,type:'image/jpeg',size:blob.size,data:reader.result});};
+        reader.onerror=rej;reader.readAsDataURL(blob);
+      },'image/jpeg',0.72);
+    }catch(e){URL.revokeObjectURL(url);rej(e)}
+  };
+  img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('Unable to read image'))};img.src=url;
+})}
+async function saveCustomer(id,isNew){
+  let c=isNew?{id}:db.customers.find(x=>String(x.id)===String(id));
+  if(!c){alert('Customer record not found.');return}
+  const oldStatus=c.status;
+  c.name=document.getElementById('f_name')?.value.trim()||'';
+  c.mobile=(document.getElementById('f_mobile')?.value||'').replace(/\D/g,'');
+  c.application=document.getElementById('f_app')?.value.trim()||'';c.referenceNo=c.application;
+  c.amount=Number(document.getElementById('f_amount')?.value||0);
+  c.rate=Number(document.getElementById('f_rate')?.value||0);
+  c.tenure=Number(document.getElementById('f_tenure')?.value||0);
+  c.dob=document.getElementById('f_dob')?.value||'';
+  c.email=document.getElementById('f_email')?.value.trim()||'';
+  c.occupation=document.getElementById('f_occupation')?.value.trim()||'';
+  c.address=document.getElementById('f_address')?.value.trim()||'';
+  c.fee=Number(document.getElementById('f_fee')?.value||0);
+  c.feeType=document.getElementById('f_feeType')?.value.trim()||'Processing Fee';
+  c.status=document.getElementById('f_status')?.value||'New';
+  c.bank=document.getElementById('f_bank')?.value||'';
+  c.account=document.getElementById('f_account')?.value||'';
+  c.ifsc=document.getElementById('f_ifsc')?.value||'';
+  c.emi=document.getElementById('f_emi')?.value||'';
+  // upiId is intentionally kept in the local/customer object. The current
+  // customers table does not have an upi_id column, so it must never break a save.
+  c.upiId=document.getElementById('f_upi')?.value.trim()||c.upiId||localStorage.getItem('loan_upi_id')||'';
+  c.updated=new Date().toISOString();c.docs=Array.isArray(c.docs)?c.docs:[];c.payments=Array.isArray(c.payments)?c.payments:[];c.history=Array.isArray(c.history)?c.history:[];
+  if(!c.name||c.mobile.length!==10||!c.application){alert('Name, 10-digit mobile and application number are required.');return}
+  let attachmentChanged=false;
+  try{
+    const photo=document.getElementById('f_photo')?.files?.[0];
+    if(photo){c.photo=(await readFile(photo)).data;attachmentChanged=true}
+    const files=[...(document.getElementById('f_docs')?.files||[])];
+    for(const f of files){const x=await readFile(f);if(x){c.docs.push(x);attachmentChanged=true}}
+  }catch(e){alert('Photo/document read failed: '+(e.message||e));return}
+  if(oldStatus!==c.status)c.history.unshift({status:c.status,date:new Date().toISOString(),note:'Status updated by agent'});
+  if(isNew){c.created=new Date().toISOString();db.customers.push(c)}
+  if(attachmentChanged)c.__attachmentsDirty=true;
+  log(isNew?'Customer Added':'Customer Updated',c.application);
+  persistLocal();refreshHome();
+  const saved=await syncCustomerToSupabase(c);
+  if(!saved){showSupabaseSaveError('Customer');return}
+  closeModal();renderAdmin();
+  const warning=window.__lastAttachmentWarning;
+  alert('Customer saved successfully.'+(warning?'\n\nPhoto/document sync warning: '+warning:''));
+}
+async function removeDoc(id,i){
+  const c=db.customers.find(x=>String(x.id)===String(id));if(!c)return;
+  c.docs=Array.isArray(c.docs)?c.docs:[];c.docs.splice(i,1);c.updated=new Date().toISOString();c.__attachmentsDirty=true;
+  const ok=await syncCustomerToSupabase(c);if(!ok){showSupabaseSaveError('Document change');return}
+  persistLocal();refreshHome();editCustomer(id);
+}
+async function deleteCustomer(id){
+  if(!confirm('Delete this customer from the active list?'))return;
+  const c=db.customers.find(x=>String(x.id)===String(id));if(!c){alert('Customer not found.');return}
+  const old={...c};c.status='Deleted';c.updated=new Date().toISOString();
+  const ok=await syncCustomerToSupabase(c);if(!ok){Object.assign(c,old);showSupabaseSaveError('Customer removal');return}
+  db.customers=db.customers.filter(x=>String(x.id)!==String(id));log('Customer Deleted',old.application||id);persistLocal();refreshHome();renderAdmin();
+  alert('Customer deleted from the active list.');
+}
+
+async function saveCustomerNotice(){
+  const id=document.getElementById('noticeCustomer')?.value;
+  const c=db.customers.find(x=>String(x.id)===String(id));
+  const editor=document.getElementById('customerNoticeEditor');
+  if(!c||!editor)return;
+  c.message=sanitizeCustomerNotice(editor.innerHTML);
+  c.updated=new Date().toISOString();
+  const ok=await syncCustomerToSupabase(c);
+  if(!ok){showSupabaseSaveError('Customer notice');return}
+  // Confirm the notice really reached the shared database so the customer
+  // can see it on another phone/browser without opening Notifications first.
+  try{
+    const check=await supabaseClient.from('customers').select('id,message').eq('mobile',String(c.mobile||'')).limit(1);
+    if(check.error)throw check.error;
+    const row=check.data?.[0];
+    if(row && String(row.message||'')!==String(c.message||'')){
+      const retry=await supabaseClient.from('customers').update({message:c.message,updated:c.updated}).eq('id',row.id);
+      if(retry.error)throw retry.error;
+    }
+  }catch(e){
+    console.warn('Customer notice verification failed:',e);
+    window.__lastSupabaseError=[e?.message,e?.details,e?.code].filter(Boolean).join(' | ');
+    showSupabaseSaveError('Customer notice');return;
+  }
+  log('Customer Notice Updated',c.name+' / '+(c.application||''));
+  persistLocal();
+  alert('Customer notice save ho gaya. Ye notice ab isi customer ke portal me bina Notifications khole bhi dikhega.');
+  loadCustomerNotice();
+}
+function adminCustomerNotice(){
+  const first=db.customers[0];
+  document.getElementById('adminContent').innerHTML=`<div class="card"><h3>Customer Notice / Agreement</h3><p class="muted">Customer select karke yahan long text, agreement ya notice likhein. Save karne ke baad sirf usi customer ke portal mein login ke baad sabse upar dikhega.</p><div class="field"><label>Select Customer</label><select id="noticeCustomer" onchange="loadCustomerNotice()">${Array.from(new Map(db.customers.map(c=>[String(c.mobile||c.id),c])).values()).map(c=>`<option value="${esc(c.id)}">${esc(c.name)} — ${esc(c.mobile)} — ${esc(c.application)}</option>`).join('')}</select></div><div class="notice-editor"><div class="notice-toolbar"><button type="button" onclick="execNoticeCommand('bold')"><b>B</b></button><button type="button" onclick="execNoticeCommand('italic')"><i>I</i></button><button type="button" onclick="execNoticeCommand('underline')"><u>U</u></button><button type="button" onclick="setNoticeBlock('H2')">Heading</button><button type="button" onclick="setNoticeBlock('P')">Paragraph</button><button type="button" onclick="execNoticeCommand('insertUnorderedList')">• List</button><button type="button" onclick="execNoticeCommand('insertOrderedList')">1. List</button><button type="button" onclick="execNoticeCommand('removeFormat')">Clear Format</button></div><div id="customerNoticeEditor" class="notice-editable" contenteditable="true" spellcheck="true" data-placeholder="Yahan agreement / notice ka pura text type ya paste karein..."></div></div><div class="row" style="margin-top:12px"><button class="btn" onclick="saveCustomerNotice()">Save Customer Notice</button><button class="btn gray" onclick="loadCustomerNotice()">Reload</button></div></div>`;
+  if(first)loadCustomerNotice();
+}
+function customerSiteBlocks(){
+  const s=getSiteSettings();
+  const out=[];
+  if(String(s.support||'').trim()) out.push(`<section class="card support-card"><h3>Need Help? / Customer Support</h3><div class="site-text">${esc(s.support)}</div></section>`);
+  if(String(s.faq||'').trim()) out.push(`<section class="card"><h3>Frequently Asked Questions</h3><details><summary style="cursor:pointer;font-weight:700">View FAQ</summary><div class="faq-box" style="margin-top:12px">${esc(s.faq)}</div></details></section>`);
+  return out.join('');
+}
+function emiSchedule(c){let n=Math.max(0,+c.tenure||0),amount=emiFor(c).emi,base=new Date(c.created||Date.now());let paid=(c.payments||[]).filter(p=>p.status==='Paid').length;let out=[];for(let i=1;i<=n;i++){let d=new Date(base);d.setMonth(d.getMonth()+i);out.push({no:i,date:d.toLocaleDateString('en-IN'),amount,status:i<=paid?'Paid':'Pending'})}return out}
+function printReceipt(id,txn){let c=db.customers.find(x=>String(x.id)===String(id)),p=(c?.payments||[]).find(x=>x.txn===txn);if(!c||!p)return;let w=window.open('','_blank');w.document.write(`<html><head><title>Payment Receipt</title><style>body{font-family:Arial;padding:30px;color:#172033}.receipt{max-width:600px;margin:auto;border:1px solid #ddd;padding:25px;border-radius:14px}h1{margin-top:0}table{width:100%;border-collapse:collapse}td{padding:10px;border-bottom:1px solid #eee}
+/* Professional upgrade layer */
+.ref-box{padding:14px 16px;border:1px solid var(--line);background:linear-gradient(135deg,#ffffff,#f8fbff);border-radius:14px}
+.dark .ref-box{background:#111827}
+.profile-hero{background:linear-gradient(135deg,#0f172a,#1d4ed8 70%,#2563eb);color:#fff;border:0;box-shadow:0 18px 45px #0f172a30}
+.profile-hero .muted{color:#dbeafe}.profile-avatar{width:62px;height:62px;border-radius:50%;object-fit:cover;border:3px solid #ffffff50;background:#ffffff20}
+.profile-avatar.placeholder{display:grid;place-items:center;font-size:27px;font-weight:800}
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}.metric-card{background:#ffffff18;border:1px solid #ffffff20;border-radius:13px;padding:12px}.metric-card span{display:block;font-size:11px;opacity:.82}.metric-card b{display:block;font-size:19px;margin-top:4px}
+.analytics .stat{position:relative;overflow:hidden}.analytics .stat:after{content:'';position:absolute;right:-20px;bottom:-28px;width:80px;height:80px;border-radius:50%;background:#2563eb10}
+.filterbar{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr auto;gap:8px;align-items:end}.filterbar .field{margin:0}.filterbar input,.filterbar select{min-height:42px}.toolbar-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.notice-card{border-left:4px solid #2563eb;background:linear-gradient(135deg,#eff6ff,#fff)}.notification{padding:14px;border:1px solid var(--line);border-radius:14px;margin:8px 0;background:#fff}.notification.unread{border-color:#93c5fd;box-shadow:0 8px 22px #2563eb14}.notification .n-dot{width:9px;height:9px;border-radius:50%;background:#2563eb;display:inline-block;margin-right:7px}.notification.read .n-dot{background:#cbd5e1}.notification-meta{font-size:12px;color:var(--muted);margin-top:5px}
+.fee-hidden{padding:16px;border:1px dashed #cbd5e1;border-radius:14px;background:#f8fafc}.dark .fee-hidden{background:#0f172a}.fee-control{padding:14px;border:1px solid #bfdbfe;border-radius:14px;background:linear-gradient(135deg,#eff6ff,#fff)}
+.doc-status{font-size:11px;font-weight:800;padding:4px 7px;border-radius:999px}.doc-status.pending{background:#ffedd5;color:#9a3412}.doc-status.verified{background:#dcfce7;color:#166534}.doc-status.rejected{background:#fee2e2;color:#991b1b}.doc-meta{font-size:12px;color:var(--muted);line-height:1.5}
+.loading-screen{position:fixed;inset:0;background:#f8fbff;display:flex;align-items:center;justify-content:center;z-index:1000;transition:opacity .25s}.loading-screen.hide{opacity:0;pointer-events:none}.loading-box{text-align:center;padding:26px}.loading-logo{width:70px;height:70px;border-radius:18px;object-fit:contain;margin-bottom:12px}.spinner{width:36px;height:36px;border:4px solid #dbeafe;border-top-color:#2563eb;border-radius:50%;margin:14px auto 0;animation:spin .85s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.mobile-nav{display:none}.sticky-actions{position:sticky;bottom:10px;z-index:5;background:#ffffffee;backdrop-filter:blur(8px);padding:10px;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px #0f172a18;margin-top:14px}.dark .sticky-actions{background:#111827ee}
+.site-brand-card{display:flex;align-items:center;gap:14px}.company-mark{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#1d4ed8,#60a5fa);display:grid;place-items:center;color:#fff;font-weight:900;font-size:22px}
+.footer-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:13px}.footer-links a{color:inherit;text-decoration:none}.footer-links a:hover{text-decoration:underline}
+@media(max-width:900px){.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filterbar{grid-template-columns:1fr 1fr}.filterbar .searchwide{grid-column:1/-1}}
+@media(max-width:650px){.grid.g2,.grid.g3{grid-template-columns:1fr}.wrap{padding:0 12px}.hero,.profile-hero{padding:18px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.metric-card b{font-size:17px}.filterbar{grid-template-columns:1fr}.filterbar .searchwide{grid-column:auto}.mobile-nav{display:flex;position:sticky;top:0;z-index:6;gap:7px;overflow:auto;padding:7px 0;background:var(--bg)}.mobile-nav .tab{white-space:nowrap;padding:9px 12px}.customer-bottom-space{height:54px}.btn{min-height:40px}.top{position:sticky;top:0;z-index:10}.tablewrap{border-radius:12px}.site-brand-card{align-items:flex-start}.footer{padding-bottom:78px}}
+</style></head><body><div class='receipt'><h1>Payment Receipt</h1><p>${esc(getSiteSettings().brandName||'Loan Application Portal')}</p>${getSiteSettings().logo?`<img src='${getSiteSettings().logo}' style='max-width:160px;max-height:60px;object-fit:contain'>`:''}<table><tr><td>Application ID / Reference No.</td><td>${esc(c.referenceNo||c.application)}</td></tr><tr><td>Customer</td><td>${esc(c.name)}</td></tr><tr><td>Application</td><td>${esc(c.application)}</td></tr><tr><td>Payment Type</td><td>${esc(p.type)}</td></tr><tr><td>Amount</td><td>${money(p.amount||c.fee)}</td></tr><tr><td>Transaction ID</td><td>${esc(p.txn)}</td></tr><tr><td>Date</td><td>${new Date(p.date).toLocaleString('en-IN')}</td></tr><tr><td>Status</td><td>${esc(p.status)}</td></tr></table><p style='margin-top:22px'><b>Verified payment record</b></p><p style='color:#64748b'>${esc(getSiteSettings().brandContact||'Customer support available through the portal.')}</p><p>Generated from the portal.</p></div><script>window.print()<\/script></body></html>`);w.document.close()}
+function emiFor(c){let P=+c.amount||0,r=(+c.rate||0)/1200,n=+c.tenure||0;let emi=r?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):(n?P/n:0);return{emi,total:emi*n,interest:emi*n-P}}
+async function agentLogin(){modal(`<h2>Agent Login</h2><div class="field"><label>Password</label><input id="adminPass" type="password" placeholder="Enter admin password"></div><button class="btn" onclick="if(document.getElementById('adminPass').value==='admin123'){closeModal();renderAdmin()}else alert('Wrong password')">Login</button>`)}
+function renderAdmin(){clearCustomerPolling();currentCustomerId=null;hideAll();let el=document.getElementById('admin');el.classList.remove('hidden');let total=db.customers.reduce((a,c)=>a+Number(c.amount||0),0),active=db.customers.filter(c=>c.status!=='Deleted'),pendingFees=active.reduce((a,c)=>a+(c.fee&&!c.feePaid?Number(c.fee):0),0),pendingPayments=active.reduce((a,c)=>a+(c.payments||[]).filter(p=>p.status==='Pending Verification').length,0);el.innerHTML=`<div class="row between"><div><span class="badge b-blue">Agent Workspace</span><h2 style="margin-top:8px">Agent Dashboard</h2><p class="muted">Customer, loan, document and payment management</p><div id="syncStatus" class="notice">Database: checking…</div></div><div class="row"><button class="btn secondary sm" onclick="exportCSV()">Export CSV</button><button class="btn secondary sm" onclick="backup()">Backup</button><button class="btn gray sm" onclick="restore()">Restore</button><button class="btn danger sm" onclick="clearDemo()">Reset Data</button><button class="btn gray sm" onclick="showHome()">Logout</button></div></div><div class="grid g3 analytics" style="margin-top:16px"><div class="stat"><span class="muted">Active Applications</span><b>${active.length}</b></div><div class="stat"><span class="muted">Under Review</span><b>${active.filter(c=>c.status==='Under Review').length}</b></div><div class="stat"><span class="muted">Approved</span><b>${active.filter(c=>c.status==='Approved').length}</b></div><div class="stat"><span class="muted">Disbursed</span><b>${active.filter(c=>c.status==='Disbursed').length}</b></div><div class="stat"><span class="muted">Loan Book</span><b>${money(total)}</b></div><div class="stat"><span class="muted">Pending Fees</span><b>${money(pendingFees)}</b></div><div class="stat"><span class="muted">Payments to Verify</span><b>${pendingPayments}</b></div><div class="stat"><span class="muted">Documents</span><b>${active.reduce((a,c)=>a+(c.docs||[]).length,0)}</b></div><div class="stat"><span class="muted">Paid Fees</span><b>${active.filter(c=>c.feePaid).length}</b></div></div><div class="tabs" style="margin-top:18px;overflow:auto"><button class="tab active" onclick="adminTab('customers',this)">Customers</button><button class="tab" onclick="adminTab('fees',this)">Fees</button><button class="tab" onclick="adminTab('payments',this)">Payments</button><button class="tab" onclick="adminTab('notifications',this)">Notifications</button><button class="tab" onclick="adminTab('audit',this)">Audit Log</button><button class="tab" onclick="adminTab('tools',this)">Tools</button><button class="tab" onclick="adminTab('notice',this)">Customer Notice</button><button class="tab" onclick="adminTab('content',this)">Website Content</button></div><div id="adminContent"></div>`;adminCustomers()}
+function loadCustomerMessage(){let id=document.getElementById('msgCustomer')?.value;let c=db.customers.find(x=>String(x.id)===String(id));let box=document.getElementById('agentMessage');if(c&&box)box.value=c.message||''}
+async function sendCustomerMessage(){
+  let id=document.getElementById('msgCustomer')?.value;
+  let box=document.getElementById('agentMessage');
+  let c=db.customers.find(x=>String(x.id)===String(id));
+  if(!c||!box)return;
+  let msg=box.value.trim();
+  if(!msg){alert('Please write a message first.');return}
+  c.message=msg; c.updated=new Date().toISOString();
+  const ok=await syncCustomerToSupabase(c);
+  if(!ok){showSupabaseSaveError('Message');return}
+  log('Message Sent',c.name+': '+msg);
+  persistLocal(); refreshHome(); loadCustomerMessage();
+  alert('Message customer portal me save ho gaya.');
+}
+function emiFor(c){let P=+c.amount||0,r=(+c.rate||0)/1200,n=+c.tenure||0;let emi=r?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):(n?P/n:0);return{emi,total:emi*n,interest:emi*n-P}}
+async function agentLogin(){modal(`<h2>Agent Login</h2><div class="field"><label>Password</label><input id="adminPass" type="password" placeholder="Enter admin password"></div><button class="btn" onclick="if(document.getElementById('adminPass').value==='admin123'){closeModal();renderAdmin()}else alert('Wrong password')">Login</button>`)}
+function renderAdmin(){clearCustomerPolling();currentCustomerId=null;hideAll();let el=document.getElementById('admin');el.classList.remove('hidden');let total=db.customers.reduce((a,c)=>a+Number(c.amount||0),0),active=db.customers.filter(c=>c.status!=='Deleted'),pendingFees=active.reduce((a,c)=>a+(c.fee&&!c.feePaid?Number(c.fee):0),0),pendingPayments=active.reduce((a,c)=>a+(c.payments||[]).filter(p=>p.status==='Pending Verification').length,0);el.innerHTML=`<div class="row between"><div><span class="badge b-blue">Agent Workspace</span><h2 style="margin-top:8px">Agent Dashboard</h2><p class="muted">Customer, loan, document and payment management</p><div id="syncStatus" class="notice">Database: checking…</div></div><div class="row"><button class="btn secondary sm" onclick="exportCSV()">Export CSV</button><button class="btn secondary sm" onclick="backup()">Backup</button><button class="btn gray sm" onclick="restore()">Restore</button><button class="btn danger sm" onclick="clearDemo()">Reset Data</button><button class="btn gray sm" onclick="showHome()">Logout</button></div></div><div class="grid g3 analytics" style="margin-top:16px"><div class="stat"><span class="muted">Active Applications</span><b>${active.length}</b></div><div class="stat"><span class="muted">Under Review</span><b>${active.filter(c=>c.status==='Under Review').length}</b></div><div class="stat"><span class="muted">Approved</span><b>${active.filter(c=>c.status==='Approved').length}</b></div><div class="stat"><span class="muted">Disbursed</span><b>${active.filter(c=>c.status==='Disbursed').length}</b></div><div class="stat"><span class="muted">Loan Book</span><b>${money(total)}</b></div><div class="stat"><span class="muted">Pending Fees</span><b>${money(pendingFees)}</b></div><div class="stat"><span class="muted">Payments to Verify</span><b>${pendingPayments}</b></div><div class="stat"><span class="muted">Documents</span><b>${active.reduce((a,c)=>a+(c.docs||[]).length,0)}</b></div><div class="stat"><span class="muted">Paid Fees</span><b>${active.filter(c=>c.feePaid).length}</b></div></div><div class="tabs" style="margin-top:18px;overflow:auto"><button class="tab active" onclick="adminTab('customers',this)">Customers</button><button class="tab" onclick="adminTab('fees',this)">Fees</button><button class="tab" onclick="adminTab('payments',this)">Payments</button><button class="tab" onclick="adminTab('notifications',this)">Notifications</button><button class="tab" onclick="adminTab('audit',this)">Audit Log</button><button class="tab" onclick="adminTab('tools',this)">Tools</button><button class="tab" onclick="adminTab('notice',this)">Customer Notice</button><button class="tab" onclick="adminTab('content',this)">Website Content</button></div><div id="adminContent"></div>`;adminCustomers()}
+function loadCustomerMessage(){let id=document.getElementById('msgCustomer')?.value;let c=db.customers.find(x=>String(x.id)===String(id));let box=document.getElementById('agentMessage');if(c&&box)box.value=c.message||''}
+async function sendCustomerMessage(){
+  let id=document.getElementById('msgCustomer')?.value;
+  let box=document.getElementById('agentMessage');
+  let c=db.customers.find(x=>String(x.id)===String(id));
+  if(!c||!box)return;
+  let msg=box.value.trim();
+  if(!msg){alert('Please write a message first.');return}
+  c.message=msg; c.updated=new Date().toISOString();
+  const ok=await syncCustomerToSupabase(c);
+  if(!ok){showSupabaseSaveError('Message');return}
+  log('Message Sent',c.name+': '+msg);
+  persistLocal(); refreshHome(); loadCustomerMessage();
+  alert('Message customer portal me save ho gaya.');
+}
+function customerInitials(name){return String(name||'Customer').trim().split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'C'}
+function customerNotificationKey(id){const c=db.customers.find(x=>String(x.id)===String(id));return 'loanpro_notif_read_'+String(c?.mobile||id)}
+function getCustomerNotifications(c){
+  const out=[]; const add=(title,text,date,type='info')=>out.push({title,text,date:type==='info'?date:date,type});
+  if(c.message) add('New message from Agent',String(c.message),c.updated||new Date().toISOString(),'info');
+  if(c.status) add('Application status updated',`Your application is currently ${c.status}.`,c.updated||new Date().toISOString(),'status');
+  if(c.fee && !c.feePaid) add('Payment request',`${c.feeType||'Processing Fee'} of ${money(c.fee)} is pending.`,c.updated||new Date().toISOString(),'payment');
+  if(c.docs&&c.docs.length) add('Documents available',`${c.docs.length} document${c.docs.length>1?'s are':' is'} available in your portal.`,c.updated||new Date().toISOString(),'document');
+  (c.payments||[]).slice(0,5).forEach(p=>add('Payment update',`${p.type||'Payment'} • ${p.status||'Submitted'}`,p.date||c.updated||new Date().toISOString(),'payment'));
+  (c.history||[]).slice(0,6).forEach(h=>add('Application update',`${h.status}${h.note?' — '+h.note:''}`,h.date||c.updated||new Date().toISOString(),'status'));
+  const seen=new Set(); return out.filter(n=>{const k=n.title+'|'+n.text; if(seen.has(k)) return false; seen.add(k); return true}).slice(0,12);
+}
+function showCustomerNotifications(id){
+  const c=db.customers.find(x=>String(x.id)===String(id)); if(!c)return;
+  const notes=getCustomerNotifications(c), key=customerNotificationKey(id); let read=[]; try{read=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}
+  const unread=notes.filter((n,i)=>!read.includes(n.title+'|'+n.text)).length;
+  let panel=document.getElementById('notificationPanel');
+  if(panel){panel.remove();return}
+  panel=document.createElement('div'); panel.id='notificationPanel'; panel.className='notification-panel';
+  panel.innerHTML=`<div class="row between"><div><h3 style="margin:0">Notifications</h3><small class="muted">${unread?unread+' unread':'All caught up'}</small></div><button class="btn sm gray" onclick="document.getElementById('notificationPanel')?.remove()">Close</button></div>${notes.length?notes.map((n,i)=>{const k=n.title+'|'+n.text;const isRead=read.includes(k);return `<div class="notification-item ${isRead?'':'unread'}"><b>${esc(n.title)}</b><div>${esc(n.text)}</div><small class="muted">${new Date(n.date).toLocaleString()}</small><div style="margin-top:6px"><button class="btn sm secondary" onclick="markCustomerNotificationRead('${id}',${i})">${isRead?'Read':'Mark read'}</button></div></div>`}).join(''):'<p class="muted">No notifications.</p>'}`;
+  document.body.appendChild(panel);
+}
+function markCustomerNotificationRead(id,index){
+  const c=db.customers.find(x=>String(x.id)===String(id)); if(!c)return; const notes=getCustomerNotifications(c),n=notes[index]; if(!n)return; const key=customerNotificationKey(id);let read=[];try{read=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){} const k=n.title+'|'+n.text;if(!read.includes(k))read.push(k);localStorage.setItem(key,JSON.stringify(read));document.getElementById('notificationPanel')?.remove();showCustomerNotifications(id);renderCustomer(id);
+}
+function unreadCustomerNotifications(c){const notes=getCustomerNotifications(c),key=customerNotificationKey(c.id);let read=[];try{read=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}return notes.filter(n=>!read.includes(n.title+'|'+n.text)).length}
+function customerNotificationListHtml(c){
+  const notes=getCustomerNotifications(c),key=customerNotificationKey(c.id);let read=[];
+  try{read=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}
+  if(!notes.length)return '<div class="notice">No notifications yet.</div>';
+  return notes.slice(0,6).map((n,i)=>{const k=n.title+'|'+n.text,isRead=read.includes(k);return `<div class="notification-item ${isRead?'':'unread'}"><b>${esc(n.title)}</b><div>${esc(n.text)}</div><small class="muted">${new Date(n.date).toLocaleString()}</small></div>`}).join('');
+}
+function renderCustomer(id){
+  let c=db.customers.find(x=>String(x.id)===String(id)); if(!c)return; currentCustomerId=id; startCustomerPolling();
+  let pct=c.status==='Approved'||c.status==='Disbursed'||c.status==='Closed'?100:c.status==='Rejected'?100:c.status==='Under Review'?55:30;
+  let totalEMI=emiFor(c).total, unread=unreadCustomerNotifications(c), initials=customerInitials(c.name);
+  const avatar=c.photo?`<img class="customer-avatar" src="${c.photo}" alt="Profile">`:`<div class="customer-avatar initials">${esc(initials)}</div>`;
+  const feeHtml=c.fee?(`<p>${esc(c.feeType||'Processing Fee')}: <b>${money(c.fee)}</b> ${c.feePaid?badge('Paid'):badge('Pending')}</p>`+(c.fee&&!c.feePaid?`<div class="paybox"><b>Payment</b><p class="muted">Pay the ${esc(c.feeType||'Processing Fee')} using your UPI app.</p><button class="btn" onclick="startUPIPayment('${c.id}')">Pay ${money(c.fee)}</button><div class="field" style="margin-bottom:0"><label>After payment, enter UTR / Transaction ID</label><input id="utr_${c.id}" placeholder="Enter UTR / Transaction ID"></div><button class="btn ok sm" style="margin-top:8px" onclick="submitPayment('${c.id}')">Submit Payment</button></div>`:'')+`<div style="margin-top:12px">${(c.payments||[]).map(p=>`<div class="doc"><div><b>${esc(p.type)}</b><br><span class="muted">${esc(p.txn)} • ${new Date(p.date).toLocaleString()}</span></div>${badge(p.status)}${p.status==='Paid'||p.status==='Pending Verification'?` <button class="btn sm gray" onclick="printReceipt('${c.id}','${esc(p.txn)}')">Receipt</button>`:''}</div>`).join('')||'<span class="muted">No payments yet.</span>'}</div>`):'<div class="notice">No payment request is currently available for this application.</div>';
+  document.getElementById('customer').innerHTML=`
+  <div class="customer-topbar">
+    <div class="customer-identity">${avatar}<div><h2>${esc(c.name||'Customer')}</h2><small>Application ${esc(c.referenceNo||c.application||'-')} • ${esc(c.mobile||'')}</small></div></div>
+    <div class="customer-actions"><button class="icon-btn" onclick="showCustomerNotifications('${c.id}')">🔔 Notifications${unread?`<span class="notif-count">${unread>9?'9+':unread}</span>`:''}</button><button class="icon-btn" onclick="showHome()">Logout</button></div>
+  </div>
+  <section class="card" id="profileSection" style="margin-top:18px"><div class="row between"><div><h3>Profile</h3><p class="muted" style="margin:0">Personal and contact details</p></div>${badge('Verified')}</div><div style="display:flex;align-items:center;gap:14px;margin:14px 0">${c.photo?`<img class="mini-avatar" style="width:64px;height:64px;border-radius:16px" src="${c.photo}" alt="Profile">`:`<div class="mini-avatar" style="width:64px;height:64px;border-radius:16px;font-size:20px">${esc(initials)}</div>`}<div><b style="font-size:18px">${esc(c.name)}</b><div class="muted">Registered mobile: ${esc(c.mobile)}</div></div></div><div class="profile-grid"><div class="profile-item"><span>Application / Reference</span><b>${esc(c.application||c.referenceNo||'-')}</b></div><div class="profile-item"><span>Mobile</span><b>${esc(c.mobile||'-')}</b></div><div class="profile-item"><span>Date of Birth</span><b>${esc(c.dob||'-')}</b></div><div class="profile-item"><span>Occupation</span><b>${esc(c.occupation||'-')}</b></div></div></section>
+  ${customerNoticeHtml(c)?`<section class="card customer-notice" style="margin-top:14px"><div class="row between"><h3>Important Customer Notice</h3><span class="badge b-blue">From Agent</span></div><div class="notice-body">${customerNoticeHtml(c)}</div></section>`:''}
+  <div class="customer-nav"><button class="btn secondary" onclick="showCustomerNotifications('${c.id}')">🔔 Notifications${unread?` (${unread})`:''}</button><button class="btn gray" onclick="document.getElementById('profileSection')?.scrollIntoView({behavior:'smooth'})">👤 Profile</button><button class="btn gray" onclick="document.getElementById('documentsSection')?.scrollIntoView({behavior:'smooth'})">📄 Documents</button></div>
+  <div class="card summary-card" style="margin-top:18px"><div class="row between"><h3>Loan Summary</h3>${badge(c.status)}</div><div class="grid g3"><div class="stat"><span class="muted">Loan Amount</span><b>${money(c.amount)}</b></div><div class="stat"><span class="muted">Interest / APR</span><b>${c.rate}%</b></div><div class="stat"><span class="muted">Tenure</span><b>${c.tenure} months</b></div><div class="stat"><span class="muted">Monthly EMI</span><b>${money(emiFor(c).emi)}</b></div></div></div>
+  <section class="card" style="margin-top:18px"><h3>Bank / A/C Details</h3><div style="display:grid;gap:10px;margin-top:12px"><div class="stat"><span class="muted">Bank</span><b>${esc(c.bank||'-')}</b></div><div class="stat"><span class="muted">A/C Number</span><b>${esc(c.account||'-')}</b></div><div class="stat"><span class="muted">IFSC</span><b>${esc(c.ifsc||'-')}</b></div></div></section>
+  <div class="card" style="margin-top:18px"><div class="row between"><h3>Application Status</h3><b>${pct}%</b></div><div class="progress"><i style="width:${pct}%"></i></div>${statusStepper(c.status)}<div class="timeline">${(c.history||[]).filter(h=>h&&h.type!=='fee_visibility').map(h=>`<div class="event"><b>${esc(h.status||'Update')}</b><div class="muted">${new Date(h.date).toLocaleString()}</div><div>${esc(h.note||'')}</div></div>`).join('')}</div></div>
+  <section class="card" style="margin-top:18px"><h3>Fee & Payments</h3>${feeHtml}</section>
+  <section class="card" id="documentsSection" style="margin-top:18px"><div class="row between"><h3>Documents</h3><span class="muted">${(c.docs||[]).length} file(s)</span></div>${(c.docs||[]).map((d,i)=>`<div class="doc"><div>📄 <b>${esc(d.name)}</b><br><small>${esc(d.type||'KYC / Document')} • ${Math.round((d.size||0)/1024)} KB</small><br><span class="badge b-green">Success</span></div><button class="btn sm secondary" onclick="downloadDoc('${c.id}',${i})">View/Download</button></div>`).join('')||'<p class="muted">No documents uploaded.</p>'}</section>
+  <section class="card" style="margin-top:18px"><h3>Loan & EMI</h3><div class="notice">Monthly EMI: <b>${money(emiFor(c).emi)}</b><br>Total payable: <b>${money(totalEMI)}</b><br>Total interest: <b>${money(emiFor(c).interest)}</b></div><h3 style="margin-top:18px">EMI Schedule</h3><div class="tablewrap"><table style="min-width:560px"><thead><tr><th>#</th><th>Due Date</th><th>EMI</th><th>Status</th></tr></thead><tbody>${emiSchedule(c).map(x=>`<tr><td>${x.no}</td><td>${x.date}</td><td>${money(x.amount)}</td><td>${badge(x.status)}</td></tr>`).join('')}</tbody></table></div></section>
+  ${customerSiteBlocks()}`
+}
+
+function viewAsCustomer(id){let c=db.customers.find(x=>String(x.id)===String(id)||String(x.mobile)===String(id));if(!c){alert('Customer record not found.');return}hideAll();document.getElementById('customer').classList.remove('hidden');renderCustomer(c.id)}
+function adminFees(){document.getElementById('adminContent').innerHTML=`<div class="card"><h3>Fee Information</h3><p class="muted">Create a fee request for a customer. Customer sees it in their portal.</p><div class="grid g3"><div class="field"><label>Customer</label><select id="feeCust">${Array.from(new Map(db.customers.map(c=>[String(c.mobile||c.id),c])).values()).map(c=>`<option value="${c.id}">${esc(c.name)} — ${esc(c.application)}</option>`).join('')}</select></div><div class="field"><label>Amount</label><input id="feeAmt" type="number" value="1550"></div><div class="field"><label>Fee Name / Purpose</label><input id="feeDesc" value="Processing Fee" placeholder="e.g. Document Verification Fee"></div></div><button class="btn" onclick="createFee()">Create Request</button><hr><div class="tablewrap"><table><thead><tr><th>Date</th><th>Customer</th><th>Description</th><th>Amount</th><th>Status</th></tr></thead><tbody>${db.fees.map(f=>`<tr><td>${new Date(f.date).toLocaleString()}</td><td>${esc(f.name)}</td><td>${esc(f.desc)}</td><td>${money(f.amount)}</td><td>${badge(f.status)}</td></tr>`).join('')||'<tr><td colspan="5">No fee requests.</td></tr>'}</tbody></table></div></div>`}
+async function createFee(){
+  let c=db.customers.find(x=>String(x.id)===String(document.getElementById('feeCust').value));
+  let amount=parseFloat(String(document.getElementById('feeAmt')?.value||'').replace(/,/g,''));
+  if(!c)return alert('Customer not found.');
+  if(!Number.isFinite(amount)||amount<=0)return alert('Enter valid fee');
+  c.fee=amount; c.feeType=document.getElementById('feeDesc').value.trim()||'Processing Fee'; c.feePaid=false; c.updated=new Date().toISOString();
+  const ok=await syncCustomerToSupabase(c);
+  if(!ok){showSupabaseSaveError('Fee');return}
+  let f={id:'F'+Date.now(),customerId:c.id,name:c.name,desc:document.getElementById('feeDesc').value,amount,status:'Pending',date:new Date().toISOString()};
+  db.fees.unshift(f); log('Fee Request',`${c.application} ${money(amount)}`);
+  persistLocal(); refreshHome(); adminFees();
+}
+function adminPayments(){let items=[];db.customers.forEach(c=>(c.payments||[]).forEach((p,i)=>items.push({c,p,i})));document.getElementById('adminContent').innerHTML=`<div class="card"><h3>Payment Verification</h3><p class="muted">Review customer-submitted UTRs and mark genuine payments as Paid.</p><div class="tablewrap"><table><thead><tr><th>Customer</th><th>Amount</th><th>UTR</th><th>Date</th><th>Status</th><th>Action</th></tr></thead><tbody>${items.map(x=>`<tr><td>${esc(x.c.name)}<br><small>${esc(x.c.application)}</small></td><td>${money(x.p.amount||x.c.fee)}</td><td>${esc(x.p.txn)}</td><td>${new Date(x.p.date).toLocaleString()}</td><td>${badge(x.p.status)}</td><td>${x.p.status==='Pending Verification'?`<button class="btn sm ok" onclick="verifyPayment('${x.c.id}',${x.i},true)">Mark Paid</button> <button class="btn sm danger" onclick="verifyPayment('${x.c.id}',${x.i},false)">Reject</button>`:'-'}</td></tr>`).join('')||'<tr><td colspan="6">No payments found.</td></tr>'}</tbody></table></div></div>`}
+async function verifyPayment(id,i,ok){
+  let c=db.customers.find(x=>String(x.id)===String(id)),p=c?.payments?.[i];
+  if(!c||!p)return;
+  p.status=ok?'Paid':'Rejected'; if(ok)c.feePaid=true; c.updated=new Date().toISOString();
+  const saved=await syncCustomerToSupabase(c);
+  if(!saved){alert('Payment status database me save nahi hua. Supabase update/RLS check karo.');return}
+  log(ok?'Payment Verified':'Payment Rejected',c.application+' UTR '+p.txn);
+  persistLocal(); refreshHome(); adminPayments();
+}
+function adminAudit(){document.getElementById('adminContent').innerHTML=`<div class="card"><h3>Audit Log</h3>${db.audit.map(a=>`<div class="doc"><div><b>${esc(a.action)}</b><br>${esc(a.detail)}</div><small>${new Date(a.date).toLocaleString()}</small></div>`).join('')||'<p class="muted">No activity yet.</p>'}</div>`}
+function adminContent(){let s=getSiteSettings();document.getElementById('adminContent').innerHTML=`<div class="card"><h3>Website Content & Branding</h3><p class="muted">Aap yahan jo text type karke Save karenge, customer-facing page par wahi text dikhaya jayega. Koi default legal wording automatically add nahi ki ja rahi.</p><div class="grid g2"><div class="field"><label>Company / Brand Name</label><input id="site_brand" value="${esc(s.brandName)}"></div><div class="field"><label>Header Contact / Short Line</label><input id="site_contact" value="${esc(s.brandContact)}"></div></div><div class="field"><label>Company Logo</label><input id="site_logo_file" type="file" accept="image/*"><small class="muted">Logo browser storage me save hoga. 500 KB se chhota logo use karein.</small></div><div class="field"><label>Customer Support / Help</label><textarea id="site_support" placeholder="Jo customer ko dikhana hai wahi type karein">${esc(s.support)}</textarea></div><div class="field"><label>APR / Interest Information</label><textarea id="site_apr" placeholder="APR / interest information yahan type karein">${esc(s.apr)}</textarea></div><div class="field"><label>Loan Disclaimer / Important Disclosure</label><textarea id="site_disclaimer" placeholder="Apna approved disclaimer yahan type karein">${esc(s.disclaimer)}</textarea></div><div class="field"><label>Terms & Conditions</label><textarea id="site_terms" placeholder="Apni Terms & Conditions yahan type karein">${esc(s.terms)}</textarea></div><div class="field"><label>Privacy Policy</label><textarea id="site_privacy" placeholder="Apni Privacy Policy yahan type karein">${esc(s.privacy)}</textarea></div><div class="field"><label>FAQ</label><textarea id="site_faq" placeholder="Question aur answer yahan type karein">${esc(s.faq)}</textarea></div><button class="btn" onclick="saveWebsiteContent()">Save Website Content</button></div>`}
+async function saveWebsiteContent(){let s=getSiteSettings();s.brandName=document.getElementById('site_brand').value.trim()||'Loan Application Portal';s.brandContact=document.getElementById('site_contact').value.trim();s.support=document.getElementById('site_support').value;s.apr=document.getElementById('site_apr').value;s.disclaimer=document.getElementById('site_disclaimer').value;s.terms=document.getElementById('site_terms').value;s.privacy=document.getElementById('site_privacy').value;s.faq=document.getElementById('site_faq').value;let f=document.getElementById('site_logo_file')?.files?.[0];if(f){if(f.size>500*1024)return alert('Logo 500 KB se chhota rakhein.');s.logo=(await readFile(f)).data}const ok=await saveSiteSettingsData(s);log('Website Content Updated','Branding, support, APR/interest, disclaimer, terms, privacy and FAQ');persistLocal();if(ok){alert('Website content Supabase database me save ho gaya. Customer devices par bhi same content load hoga.')}else{alert('Content is device par save ho gaya, lekin Supabase database me save nahi hua. Supabase website_settings table/RLS policy check karein.')}adminContent()}
+function adminTools(){document.getElementById('adminContent').innerHTML=`<div class="grid g2"><div class="card"><h3>Backup / Restore</h3><p>Export all customers, fees and audit records as JSON.</p><button class="btn" onclick="backup()">Download Backup</button><button class="btn gray" style="margin-left:6px" onclick="restore()">Restore JSON</button></div><div class="card"><h3>Portal Settings</h3><div class="field"><label>Portal name</label><input value="Loan Application Portal" disabled></div><p class="muted">Payment. Customers only see the Pay button in their portal.</p><div class="field"><label>Receiving UPI ID</label><input id="upiId" placeholder="example@upi" value="${esc(localStorage.getItem('loan_upi_id')||'')}"></div><button class="btn" onclick="saveUPIId()">Save Payment Account</button></div></div>`}
+function saveUPIId(){let id=(document.getElementById('upiId')?.value||'').trim();if(!id)return alert('Enter a valid UPI ID');localStorage.setItem('loan_upi_id',id);alert('UPI ID saved');}
+async function startUPIPayment(id){
+  const c=db.customers.find(x=>String(x.id)===String(id));
+  if(!c||!c.fee)return alert('No pending fee found.');
+  const upi=(c.upiId||'').trim();
+  if(!upi)return alert('Payment UPI ID is not configured for this customer. Open Edit Customer and save the UPI ID.');
+  const note=encodeURIComponent((c.feeType||'Processing Fee')+' '+c.application);
+  const url='upi://pay?pa='+encodeURIComponent(upi)+'&pn='+encodeURIComponent('Loan Application Portal')+'&am='+encodeURIComponent(Number(c.fee).toFixed(2))+'&cu=INR&tn='+note;
+  const a=document.createElement('a'); a.href=url; a.style.display='none';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+async function submitPayment(id){
+  let c=db.customers.find(x=>String(x.id)===String(id));
+  let utr=(document.getElementById('utr_'+id)?.value||'').trim();
+  if(!c||!utr)return alert('Please enter the UTR / Transaction ID.');
+  c.payments=c.payments||[];
+  c.payments.unshift({type:'UPI',txn:utr,status:'Pending Verification',date:new Date().toISOString(),amount:c.fee});
+  c.updated=new Date().toISOString();
+  const saved=await syncCustomerToSupabase(c);
+  if(!saved){showSupabaseSaveError('Payment details');return}
+  log('Payment Submitted',c.application+' UPI '+utr);
+  persistLocal(); renderCustomer(id);
+  alert('Payment details submitted. Agent verification is required before marking it Paid.');
+}
+function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loan-portal-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href)}function restore(){let i=document.createElement('input');i.type='file';i.accept='.json';i.onchange=()=>{let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.customers)throw 0;db=x;save();renderAdmin();alert('Backup restored')}catch(e){alert('Invalid backup')}};r.readAsText(i.files[0])};i.click()}
+function exportCSV(){let head=['Name','Mobile','Application','Amount','Rate','Tenure','Fee','Fee Paid','Status'];let lines=[head,...db.customers.map(c=>[c.name,c.mobile,c.application,c.amount,c.rate,c.tenure,c.fee,c.feePaid?'Yes':'No',c.status])].map(r=>r.map(x=>'"'+String(x??'').replace(/"/g,'""')+'"').join(','));let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/csv'}));a.download='loan-customers.csv';a.click()}
+async function downloadDoc(id,i){
+  const c=db.customers.find(x=>String(x.id)===String(id));
+  const d=c?.docs?.[i];
+  if(!d||!d.data)return alert('Document file is not available in the database.');
+  try{
+    if(d.data.startsWith('data:')){
+      const comma=d.data.indexOf(',');
+      if(comma<0)throw new Error('Invalid data URL');
+      const meta=d.data.slice(5,comma), body=d.data.slice(comma+1);
+      const mime=(meta.split(';')[0]||d.type||'application/octet-stream');
+      const bin=atob(body), bytes=new Uint8Array(bin.length);
+      for(let j=0;j<bin.length;j++)bytes[j]=bin.charCodeAt(j);
+      const blob=new Blob([bytes],{type:mime});
+      const u=URL.createObjectURL(blob);
+      const a=document.createElement('a'); a.href=u; a.download=d.name||'document';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(u),5000);
+      return;
+    }
+    window.open(d.data,'_blank');
+  }catch(err){console.error(err);alert('Unable to open/download document.')}
+}
+
+function toggleTheme(){document.body.classList.toggle('dark');localStorage.setItem('loanTheme',document.body.classList.contains('dark')?'dark':'light')}function clearDemo(){if(confirm('Reset all saved data?')){db=structuredClone(seed);save();renderAdmin()}}
+function modal(html){let m=document.getElementById('modal');m.classList.remove('hidden');m.innerHTML=`<div class="modal"><div class="modalbox"><div class="row between"><span></span><button class="btn gray sm" onclick="closeModal()">✕</button></div>${html}</div></div>`}function closeModal(){document.getElementById('modal').classList.add('hidden');document.getElementById('modal').innerHTML=''}
+async function refreshCurrentCustomerFromSupabase(){
+  if(!currentCustomerId) return;
+  const local=db.customers.find(x=>String(x.id)===String(currentCustomerId));
+  if(!local) return;
+  try{
+    const idValue=/^\d+$/.test(String(currentCustomerId))?Number(currentCustomerId):currentCustomerId;
+    const {data,error}=await supabaseClient.from('customers')
+      .select('*').eq('id',idValue).limit(1);
+    if(error||!data||!data.length)return;
+
+    const remote=normalizeSupabaseRow(data[0]);
+    const merged=mergeCustomer(local,remote);
+    const changed=['name','application','amount','rate','tenure','fee','feeType','feePaid','status','message',
+      'bank','account','ifsc','emi','dob','email','address','occupation','photo','docs','payments',
+      'history','upiId'].some(k=>JSON.stringify(local[k])!==JSON.stringify(merged[k]));
+
+    if(changed){
+      Object.assign(local,merged);
+      persistLocal();
+      refreshHome();
+
+      // Keep the customer inside the portal. Do not auto-logout while
+      // refreshing data in the background.
+      const customerEl=document.getElementById('customer');
+      if(customerEl && !customerEl.classList.contains('hidden')) renderCustomer(local.id);
+    }
+  }catch(e){
+    console.warn('Customer polling failed:',e);
+  }
+}
+
+function startCustomerPolling(){
+  if(customerPollTimer) return;
+  customerPollTimer=setInterval(refreshCurrentCustomerFromSupabase,5000);
+}
+function clearCustomerPolling(){
+  if(customerPollTimer){clearInterval(customerPollTimer);customerPollTimer=null;}
+}
+async function subscribeCustomerRealtime(){
+  try{
+    if(realtimeChannel) await supabaseClient.removeChannel(realtimeChannel);
+    realtimeChannel=supabaseClient.channel('customer-portal-sync')
+      .on('postgres_changes',{event:'UPDATE',schema:'public',table:'customers'},async payload=>{
+        const r=payload.new;
+        const remote=normalizeSupabaseRow(r);
+        const i=db.customers.findIndex(x=>String(x.id)===String(remote.id) || String(x.mobile)===String(remote.mobile));
+        if(i>=0) db.customers[i]=mergeCustomer(db.customers[i],remote); else db.customers.push(remote);
+        persistLocal(); refreshHome();
+        if(currentCustomerId && String(remote.id)===String(currentCustomerId)){
+          const customerEl=document.getElementById('customer');
+          if(customerEl && !customerEl.classList.contains('hidden')) renderCustomer(remote.id);
+        }
+      })
+      .subscribe((status,err)=>{if(status==='CHANNEL_ERROR'||status==='TIMED_OUT') console.warn('Realtime:',status,err)});
+  }catch(e){console.warn('Realtime setup failed:',e)}
+}
+if(localStorage.getItem('loanTheme')==='dark')document.body.classList.add('dark');initSiteContent();refreshHome();syncFromSupabase(); subscribeCustomerRealtime();
+
+</script></body></html>
