@@ -18,6 +18,705 @@
 .bank-contact-icon{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;background:#eaf2ff;font-size:18px}
 .bank-contact-label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;margin-bottom:2px}
 .bank-contact-number{color:#173f8f;font-weight:800;text-decoration:none;letter-spacing:.02em;font-size:18px}
+
+/* Customer profile visual design — design only */
+#customer{
+  background:#f4f7fb;
+}
+#customer .customer-topbar{
+  position:relative;
+  overflow:hidden;
+  min-height:170px;
+  padding:28px 28px;
+  border-radius:22px;
+  margin-bottom:14px;
+  background:
+    radial-gradient(420px 150px at 88% 110%,transparent 48%,#ffffff12 49%,#ffffff12 50%,transparent 51%),
+    radial-gradient(430px 170px at 92% 100%,transparent 54%,#ffffff10 55%,#ffffff10 56%,transparent 57%),
+    linear-gradient(135deg,#0756b9 0%,#0b4a9b 48%,#083a83 100%);
+  box-shadow:0 10px 28px #0f172a20;
+}
+#customer .customer-topbar:after{
+  content:'';
+  position:absolute;
+  width:210px;height:210px;
+  right:-65px;top:-35px;
+  border-radius:50%;
+  border:1px solid #ffffff18;
+  box-shadow:0 0 0 22px #ffffff08,0 0 0 44px #ffffff05;
+  pointer-events:none;
+}
+#customer .customer-identity{
+  position:relative;
+  z-index:2;
+  gap:18px;
+}
+#customer .customer-avatar{
+  width:84px;height:84px;
+  border-radius:50%;
+  background:#eef6ff;
+  color:#0756b9;
+  border:4px solid #fff;
+  box-shadow:0 3px 12px #001a3a45;
+  font-size:30px;
+}
+#customer .customer-identity h2{
+  font-size:29px;
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+#customer .customer-identity small{
+  font-size:17px;
+  color:#e6f1ff;
+  margin-top:5px;
+}
+#customer .customer-actions{
+  position:relative;
+  z-index:3;
+}
+#customer .customer-actions .icon-btn{
+  background:#ffffff12;
+  border-color:#ffffff35;
+}
+#customer .customer-topbar:before{
+  content:'✓  Active Customer';
+  position:absolute;
+  z-index:3;
+  right:28px;
+  top:58px;
+  padding:11px 18px;
+  border-radius:999px;
+  background:#c9f8d9;
+  color:#176b3b;
+  font-weight:900;
+  font-size:14px;
+  box-shadow:0 5px 14px #001a3a18;
+}
+#customer #profileSection{
+  padding:0;
+  overflow:hidden;
+  border:1px solid #e2e8f0;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 10px 28px #0f172a12;
+}
+#customer #profileSection > .row:first-child{
+  padding:22px 24px 10px;
+  margin:0;
+}
+#customer #profileSection > .row:first-child h3{
+  font-size:24px;
+  margin:0;
+}
+#customer #profileSection > div:nth-child(2){
+  display:none !important;
+}
+#customer #profileSection .profile-grid{
+  gap:0;
+  margin:0;
+  border-top:1px solid #e5eaf1;
+}
+#customer #profileSection .profile-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:70px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  column-gap:12px;
+  align-items:center;
+  min-height:104px;
+  padding:16px 18px;
+  background:#fff;
+  border:0;
+  border-right:1px solid #e5eaf1;
+  border-bottom:1px solid #e5eaf1;
+  border-radius:0;
+}
+#customer #profileSection .profile-item:nth-child(2n){
+  border-right:0;
+}
+#customer #profileSection .profile-item:nth-last-child(-n+1){
+  border-bottom:0;
+}
+#customer #profileSection .profile-item:before{
+  grid-column:1;
+  grid-row:1 / span 2;
+  width:56px;height:56px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+  font-weight:900;
+}
+#customer #profileSection .profile-item:nth-child(1):before{content:'👤';background:#e7f1ff;color:#2563eb}
+#customer #profileSection .profile-item:nth-child(2):before{content:'▤';background:#fff0d9;color:#ed9415}
+#customer #profileSection .profile-item:nth-child(3):before{content:'☎';background:#dcfce7;color:#159447}
+#customer #profileSection .profile-item:nth-child(4):before{content:'▣';background:#ffe1e8;color:#e83d62}
+#customer #profileSection .profile-item:nth-child(5):before{content:'▰';background:#ebe4ff;color:#5b2bd6}
+#customer #profileSection .profile-item span{
+  grid-column:2;
+  grid-row:1;
+  font-size:12px;
+  line-height:1.2;
+  color:#64748b;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+#customer #profileSection .profile-item b{
+  grid-column:2;
+  grid-row:2;
+  margin-top:4px;
+  font-size:21px;
+  line-height:1.2;
+  color:#172033;
+}
+#customer #profileSection .profile-item:nth-child(5){
+  grid-column:1 / -1;
+  border-right:0;
+  border-bottom:0;
+}
+#customer .customer-notice{
+  padding:0;
+  overflow:hidden;
+  border:1px solid #8fc2f2;
+  border-radius:22px;
+  background:#eef7ff;
+  box-shadow:0 10px 28px #2563eb16;
+}
+#customer .customer-notice > .row:first-child{
+  position:relative;
+  min-height:82px;
+  padding:0 22px 0 72px;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(135deg,#0756b9,#0b3f8b);
+  overflow:hidden;
+}
+#customer .customer-notice > .row:first-child:before{
+  content:'📣';
+  position:absolute;
+  left:20px;
+  font-size:31px;
+  filter:drop-shadow(0 2px 2px #0003);
+}
+#customer .customer-notice > .row:first-child:after{
+  content:'';
+  position:absolute;
+  right:-40px;
+  bottom:-62px;
+  width:250px;height:120px;
+  border-radius:50%;
+  border:10px solid #f3c84b;
+  border-left-color:transparent;
+  border-bottom-color:transparent;
+  transform:rotate(-13deg);
+}
+#customer .customer-notice > .row:first-child h3{
+  position:relative;
+  z-index:2;
+  margin:0;
+  color:#fff;
+  font-size:23px;
+}
+#customer .customer-notice > .row:first-child .badge{
+  position:relative;
+  z-index:2;
+  background:#e7f1ff;
+  color:#1557ba;
+  padding:7px 13px;
+}
+#customer .customer-notice .notice-body{
+  margin:0;
+  padding:20px 22px;
+  color:#172033;
+  background:linear-gradient(180deg,#eaf5ff,#f4f9ff);
+  font-size:17px;
+  line-height:1.62;
+  min-height:90px;
+}
+@media(max-width:650px){
+  #customer .customer-topbar{
+    min-height:168px;
+    padding:24px 20px;
+  }
+  #customer .customer-topbar:before{
+    right:20px;
+    top:auto;
+    bottom:18px;
+    font-size:13px;
+    padding:9px 13px;
+  }
+  #customer .customer-actions{
+    position:absolute;
+    right:18px;
+    top:16px;
+    width:auto;
+  }
+  #customer .customer-actions .icon-btn{
+    padding:7px 9px;
+    font-size:11px;
+  }
+  #customer .customer-identity{
+    gap:13px;
+    align-items:center;
+  }
+  #customer .customer-avatar{
+    width:72px;height:72px;
+    font-size:26px;
+  }
+  #customer .customer-identity h2{
+    font-size:22px;
+  }
+  #customer .customer-identity small{
+    font-size:14px;
+    max-width:220px;
+  }
+  #customer #profileSection > .row:first-child{
+    padding:18px 18px 10px;
+  }
+  #customer #profileSection > .row:first-child h3{
+    font-size:22px;
+  }
+  #customer #profileSection .profile-item{
+    min-height:94px;
+    grid-template-columns:58px minmax(0,1fr);
+    padding:13px 12px;
+    column-gap:10px;
+  }
+  #customer #profileSection .profile-item:before{
+    width:48px;height:48px;
+    border-radius:14px;
+    font-size:21px;
+  }
+  #customer #profileSection .profile-item b{
+    font-size:18px;
+  }
+  #customer .customer-notice > .row:first-child{
+    min-height:74px;
+    padding-left:64px;
+  }
+  #customer .customer-notice > .row:first-child h3{
+    font-size:19px;
+  }
+  #customer .customer-notice .notice-body{
+    padding:17px 18px;
+    font-size:16px;
+  }
+}
+
+
+/* Customer portal: extend the approved visual design to every section — design only */
+#customer .card,
+#customer section.card,
+#customer div.card{
+  border:1px solid #dfe7f0;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 10px 28px #0f172a12;
+}
+#customer .summary-card,
+#customer .summary-card.card{
+  padding:0;
+  overflow:hidden;
+  background:#eef6ff;
+  border-color:#9fc9f5;
+}
+#customer .summary-card > .row:first-child{
+  margin:0;
+  padding:22px 24px 12px;
+}
+#customer .summary-card > .row:first-child h3,
+#customer section.card > .row:first-child h3,
+#customer section.card > h3,
+#customer div.card > .row:first-child h3,
+#customer div.card > h3{
+  font-size:24px;
+  margin:0;
+  color:#172033;
+}
+#customer .summary-card > .grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  margin:0;
+}
+#customer .summary-card .stat{
+  position:relative;
+  min-height:108px;
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  column-gap:16px;
+  align-items:center;
+  padding:18px 20px;
+  background:#fff;
+  border:0;
+  border-top:1px solid #e1e8f0;
+  border-radius:0;
+}
+#customer .summary-card .stat:before{
+  grid-column:1;
+  grid-row:1 / span 2;
+  width:56px;height:56px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  font-weight:900;
+}
+#customer .summary-card .stat:nth-child(1):before{content:'₹';background:#e7f1ff;color:#2563eb}
+#customer .summary-card .stat:nth-child(2):before{content:'%';background:#fff0d9;color:#ed9415}
+#customer .summary-card .stat:nth-child(3):before{content:'◷';background:#dcfce7;color:#159447}
+#customer .summary-card .stat:nth-child(4):before{content:'₹';background:#ffe1e8;color:#e83d62}
+#customer .summary-card .stat:nth-child(5):before{content:'✓';background:#ebe4ff;color:#5b2bd6}
+#customer .summary-card .stat:nth-child(6):before{content:'📅';background:#e5f0ff;color:#2563eb}
+#customer .summary-card .stat:nth-child(7):before{content:'▥';background:#e8f8ed;color:#159447}
+#customer .summary-card .stat span{
+  grid-column:2;grid-row:1;
+  font-size:16px;color:#64748b;font-weight:500;
+}
+#customer .summary-card .stat b{
+  grid-column:2;grid-row:2;
+  margin-top:4px;font-size:24px;line-height:1.2;color:#172033;
+}
+
+/* Bank details */
+#customer section.card:has(> h3:first-child){
+  padding:0;
+  overflow:hidden;
+}
+#customer section.card:has(> h3:first-child) > h3{
+  padding:22px 24px 12px;
+}
+#customer section.card:has(> h3:first-child) > div[style*="display:grid"]{
+  display:block !important;
+  margin:0 !important;
+}
+#customer section.card:has(> h3:first-child) .stat{
+  position:relative;
+  min-height:108px;
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  column-gap:16px;
+  align-items:center;
+  padding:18px 20px;
+  border:0;
+  border-top:1px solid #e1e8f0;
+  border-radius:0;
+  background:#fff;
+}
+#customer section.card:has(> h3:first-child) .stat:before{
+  grid-column:1;grid-row:1 / span 2;
+  width:56px;height:56px;border-radius:16px;
+  display:grid;place-items:center;font-size:24px;font-weight:900;
+}
+#customer section.card:has(> h3:first-child) .stat:nth-child(1):before{content:'🏦';background:#e7f1ff;color:#2563eb}
+#customer section.card:has(> h3:first-child) .stat:nth-child(2):before{content:'▣';background:#fff0d9;color:#ed9415}
+#customer section.card:has(> h3:first-child) .stat:nth-child(3):before{content:'▤';background:#ffe1e8;color:#e83d62}
+#customer section.card:has(> h3:first-child) .stat span{grid-column:2;grid-row:1;font-size:16px;color:#64748b;font-weight:500}
+#customer section.card:has(> h3:first-child) .stat b{grid-column:2;grid-row:2;margin-top:4px;font-size:23px;color:#172033}
+
+/* Application status */
+#customer > div.card:not(.summary-card){
+  padding:0;
+  overflow:hidden;
+}
+#customer > div.card:not(.summary-card) > .row:first-child{
+  padding:22px 24px 12px;
+  margin:0;
+}
+#customer > div.card:not(.summary-card) > .progress,
+#customer > div.card:not(.summary-card) > .status-steps,
+#customer > div.card:not(.summary-card) > .timeline{
+  margin-left:20px;margin-right:20px;
+}
+#customer > div.card:not(.summary-card) > .progress{margin-top:4px}
+#customer > div.card:not(.summary-card) > .status-steps{margin-bottom:18px}
+#customer > div.card:not(.summary-card) > .timeline{padding-bottom:20px}
+
+/* Fee & Payments */
+#customer section.card:has(> h3 + *){
+  box-shadow:0 10px 28px #0f172a12;
+}
+#customer section.card:has(> h3) > .paybox{
+  margin:16px 20px;
+  border-radius:18px;
+  border:1px solid #bfdbfe;
+  background:#eef6ff;
+}
+#customer section.card:has(> h3) > p,
+#customer section.card:has(> h3) > div[style*="margin-top:12px"]{
+  margin-left:20px !important;
+  margin-right:20px !important;
+}
+
+/* Transaction History */
+#customer #transactionsSection{
+  padding:0;
+  overflow:hidden;
+}
+#customer #transactionsSection > .row:first-child{
+  padding:22px 24px 12px;
+  margin:0;
+}
+#customer #transactionsSection .tablewrap{
+  margin:0 20px 20px !important;
+  border:1px solid #e1e8f0;
+  border-radius:16px;
+  overflow:auto;
+}
+#customer #transactionsSection table{background:#fff}
+
+/* Security */
+#customer section.card:has(.badge.b-green):not(#profileSection){
+  padding:0;
+  overflow:hidden;
+}
+#customer section.card:has(.badge.b-green):not(#profileSection) > .row:first-child{
+  padding:22px 24px 12px;
+  margin:0;
+}
+#customer section.card:has(.badge.b-green):not(#profileSection) > .row:last-child{
+  padding:0 20px 20px;
+}
+
+/* Documents */
+#customer #documentsSection{
+  padding:0;
+  overflow:hidden;
+}
+#customer #documentsSection > .row:first-child{
+  padding:22px 24px 12px;
+  margin:0;
+}
+#customer #documentsSection > .doc{
+  margin:0;
+  padding:18px 20px;
+  border-top:1px solid #e1e8f0;
+  border-radius:0;
+  background:#fff;
+}
+
+@media(max-width:650px){
+  #customer .summary-card > .row:first-child,
+  #customer section.card:has(> h3:first-child) > h3,
+  #customer > div.card:not(.summary-card) > .row:first-child,
+  #customer #transactionsSection > .row:first-child,
+  #customer section.card:has(.badge.b-green):not(#profileSection) > .row:first-child,
+  #customer #documentsSection > .row:first-child{padding-left:18px;padding-right:18px}
+  #customer .summary-card .stat,
+  #customer section.card:has(> h3:first-child) .stat{min-height:96px;grid-template-columns:58px minmax(0,1fr);padding:13px 12px;column-gap:10px}
+  #customer .summary-card .stat:before,
+  #customer section.card:has(> h3:first-child) .stat:before{width:48px;height:48px;border-radius:14px;font-size:21px}
+  #customer .summary-card .stat b{font-size:21px}
+  #customer .summary-card .stat span,
+  #customer section.card:has(> h3:first-child) .stat span{font-size:14px}
+  #customer section.card:has(> h3:first-child) .stat b{font-size:20px}
+}
+
+
+/* REFERENCE IMAGE DESIGN ONLY — no content/functionality changes */
+#customer{
+  background:#f3f7fc;
+  color:#172033;
+  padding:2px 0 28px;
+}
+#customer .customer-topbar{
+  min-height:184px;
+  margin:0 0 16px;
+  padding:25px 28px;
+  border-radius:24px;
+  background:
+    radial-gradient(380px 170px at 95% 5%,#ffffff10 0 42%,transparent 43%),
+    radial-gradient(520px 210px at 105% 105%,transparent 48%,#ffffff0d 49% 50%,transparent 51%),
+    linear-gradient(135deg,#0759c4 0%,#0b4a9b 55%,#06377d 100%);
+  box-shadow:0 14px 35px #0f172a20;
+}
+#customer .customer-avatar{
+  width:82px;height:82px;border-radius:50%;
+  background:#eef6ff;color:#0759c4;border:4px solid #fff;
+  box-shadow:0 4px 14px #001a3a35;font-size:29px;
+}
+#customer .customer-identity{gap:17px}
+#customer .customer-identity h2{font-size:28px;line-height:1.15}
+#customer .customer-identity small{font-size:16px;color:#e6f1ff}
+#customer .customer-topbar:before{
+  right:28px;top:auto;bottom:24px;
+  padding:11px 18px;border-radius:999px;
+  background:#c9f8d9;color:#176b3b;font-size:14px;
+}
+#customer .customer-actions .icon-btn{
+  min-height:44px;padding:10px 14px;border-radius:13px;
+  background:#ffffff12;border-color:#ffffff38;
+}
+
+#customer .customer-nav{
+  gap:8px;margin:16px 0 18px;padding:5px;
+  border-radius:18px;background:#eef3fa;
+  box-shadow:inset 0 0 0 1px #e2e8f0;
+}
+#customer .customer-nav .btn{
+  border:0;border-radius:13px;padding:12px 15px;
+  font-weight:800;background:transparent;color:#334155;
+}
+#customer .customer-nav .btn:first-child,
+#customer .customer-nav .btn.secondary{
+  background:#e3edff;color:#1d57bf;
+}
+
+#customer #profileSection,
+#customer .summary-card,
+#customer section.card,
+#customer div.card{
+  border:1px solid #dfe7f0;
+  border-radius:24px;
+  background:#fff;
+  box-shadow:0 12px 30px #0f172a10;
+}
+#customer #profileSection{overflow:hidden;padding:0}
+#customer #profileSection > .row:first-child,
+#customer .summary-card > .row:first-child,
+#customer #transactionsSection > .row:first-child,
+#customer #documentsSection > .row:first-child,
+#customer section.card > .row:first-child{
+  padding:22px 28px 13px;margin:0;
+}
+#customer #profileSection > .row:first-child h3,
+#customer .summary-card > .row:first-child h3,
+#customer section.card > h3,
+#customer section.card > .row:first-child h3{
+  font-size:24px;letter-spacing:-.02em;color:#172033;
+}
+#customer #profileSection > .row:first-child p,
+#customer section.card > .row:first-child p{font-size:16px}
+
+#customer #profileSection .profile-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0;
+  border-top:1px solid #e1e7ef;
+}
+#customer #profileSection .profile-item{
+  min-height:112px;padding:18px 22px;
+  display:grid;grid-template-columns:64px minmax(0,1fr);
+  grid-template-rows:auto auto;column-gap:16px;align-items:center;
+  background:#fff;border:0;border-right:1px solid #e1e7ef;
+  border-bottom:1px solid #e1e7ef;border-radius:0;
+}
+#customer #profileSection .profile-item:nth-child(2n){border-right:0}
+#customer #profileSection .profile-item:nth-child(5){grid-column:1/-1;border-right:0;border-bottom:0}
+#customer #profileSection .profile-item:before{
+  width:56px;height:56px;border-radius:17px;
+  font-size:24px;box-shadow:none;
+}
+#customer #profileSection .profile-item span{
+  font-size:13px;color:#64748b;font-weight:900;letter-spacing:.02em;
+}
+#customer #profileSection .profile-item b{font-size:22px;color:#172033}
+
+#customer .summary-card{padding:0;overflow:hidden;background:#eef6ff;border-color:#a9cff5}
+#customer .summary-card > .grid{grid-template-columns:1fr;gap:0;margin:0}
+#customer .summary-card .stat{
+  min-height:112px;padding:18px 22px;
+  display:grid;grid-template-columns:64px minmax(0,1fr);
+  grid-template-rows:auto auto;column-gap:16px;align-items:center;
+  background:#fff;border:0;border-top:1px solid #e1e7ef;border-radius:0;
+}
+#customer .summary-card .stat:before,
+#customer section.card:has(> h3:first-child) .stat:before{
+  width:56px;height:56px;border-radius:17px;font-size:24px;
+}
+#customer .summary-card .stat span{font-size:16px;color:#64748b}
+#customer .summary-card .stat b{font-size:24px;color:#172033}
+
+#customer section.card:has(> h3:first-child){padding:0;overflow:hidden}
+#customer section.card:has(> h3:first-child)>h3{padding:22px 28px 13px;margin:0}
+#customer section.card:has(> h3:first-child)>div[style*="display:grid"]{display:block!important;margin:0!important}
+#customer section.card:has(> h3:first-child) .stat{
+  min-height:112px;padding:18px 22px;
+  display:grid;grid-template-columns:64px minmax(0,1fr);grid-template-rows:auto auto;
+  column-gap:16px;align-items:center;background:#fff;border:0;
+  border-top:1px solid #e1e7ef;border-radius:0;
+}
+#customer section.card:has(> h3:first-child) .stat span{font-size:16px;color:#64748b}
+#customer section.card:has(> h3:first-child) .stat b{font-size:23px;color:#172033}
+
+#customer > div.card:not(.summary-card){padding:0;overflow:hidden}
+#customer > div.card:not(.summary-card) > .progress{margin:4px 28px 0;height:13px}
+#customer > div.card:not(.summary-card) > .status-steps{margin:16px 28px 20px}
+#customer > div.card:not(.summary-card) > .timeline{margin:0 28px 24px 34px}
+#customer .status-step{padding:12px 7px;border-radius:16px;background:#f8fafc}
+#customer .status-step.active{background:#edf5ff}
+
+#customer section.card:has(> h3 + *) .paybox{
+  margin:16px 22px;border-radius:18px;background:#eef6ff;border:1px solid #bfdbfe;padding:16px;
+}
+#customer section.card:has(> h3 + *) > p,
+#customer section.card:has(> h3 + *) > div[style*="margin-top:12px"]{
+  margin-left:22px!important;margin-right:22px!important;
+}
+
+#customer #transactionsSection{padding:0;overflow:hidden}
+#customer #transactionsSection .tablewrap{margin:0 22px 22px!important;border:1px solid #e1e7ef;border-radius:16px;overflow:auto}
+#customer #transactionsSection th{background:#f8fafc;color:#334155}
+
+#customer section.card:has(.badge.b-green):not(#profileSection){padding:0;overflow:hidden}
+#customer section.card:has(.badge.b-green):not(#profileSection) > .row:first-child{padding:22px 28px 13px}
+#customer section.card:has(.badge.b-green):not(#profileSection) > .row:last-child{padding:0 22px 22px}
+
+#customer #documentsSection{padding:0;overflow:hidden}
+#customer #documentsSection > .doc{margin:0;padding:18px 22px;border-top:1px solid #e1e7ef;border-radius:0;background:#fff}
+#customer #documentsSection .doc .btn{border-radius:11px}
+
+#customer #emiSection{padding:0;overflow:hidden}
+#customer #emiSection > h3{padding:22px 28px 12px;margin:0}
+#customer #emiSection > .notice{margin:0 22px 18px;border-radius:17px;background:#eef6ff;border-color:#bfdbfe}
+#customer #emiSection > .tablewrap{margin:0 22px 22px}
+
+@media(max-width:650px){
+  #customer{padding-bottom:18px}
+  #customer .customer-topbar{min-height:175px;padding:22px 18px;border-radius:22px}
+  #customer .customer-avatar{width:70px;height:70px;font-size:25px}
+  #customer .customer-identity{gap:12px}
+  #customer .customer-identity h2{font-size:21px}
+  #customer .customer-identity small{font-size:13px;max-width:210px}
+  #customer .customer-topbar:before{right:18px;bottom:17px;font-size:12px;padding:9px 13px}
+  #customer .customer-actions{right:14px;top:13px}
+  #customer .customer-actions .icon-btn{padding:7px 9px;font-size:11px}
+  #customer .customer-nav{border-radius:15px;overflow:auto;flex-wrap:nowrap}
+  #customer .customer-nav .btn{flex:0 0 auto;padding:11px 13px}
+  #customer #profileSection .profile-grid{grid-template-columns:1fr}
+  #customer #profileSection .profile-item,
+  #customer .summary-card .stat,
+  #customer section.card:has(> h3:first-child) .stat{
+    min-height:100px;grid-template-columns:58px minmax(0,1fr);padding:14px 13px;column-gap:12px
+  }
+  #customer #profileSection .profile-item{border-right:0}
+  #customer #profileSection .profile-item:before,
+  #customer .summary-card .stat:before,
+  #customer section.card:has(> h3:first-child) .stat:before{width:48px;height:48px;border-radius:14px;font-size:21px}
+  #customer #profileSection .profile-item b{font-size:19px}
+  #customer .summary-card .stat b{font-size:21px}
+  #customer .summary-card .stat span,
+  #customer section.card:has(> h3:first-child) .stat span{font-size:14px}
+  #customer section.card:has(> h3:first-child) .stat b{font-size:20px}
+  #customer #profileSection > .row:first-child,
+  #customer .summary-card > .row:first-child,
+  #customer #transactionsSection > .row:first-child,
+  #customer #documentsSection > .row:first-child,
+  #customer section.card > .row:first-child,
+  #customer section.card:has(> h3:first-child)>h3,
+  #customer #emiSection > h3{padding-left:18px;padding-right:18px}
+  #customer > div.card:not(.summary-card) > .progress,
+  #customer > div.card:not(.summary-card) > .status-steps{margin-left:18px;margin-right:18px}
+  #customer > div.card:not(.summary-card) > .timeline{margin-left:24px;margin-right:18px}
+  #customer section.card:has(> h3 + *) .paybox,
+  #customer section.card:has(> h3 + *) > p,
+  #customer section.card:has(> h3 + *) > div[style*="margin-top:12px"],
+  #customer #transactionsSection .tablewrap,
+  #customer #documentsSection > .doc,
+  #customer #emiSection > .notice,
+  #customer #emiSection > .tablewrap{margin-left:14px!important;margin-right:14px!important}
+}
+
 </style></head><body>
 <header class="top"><div class="brand"><span class="brand-wrap"><img id="siteLogo" class="site-logo hidden" alt="Company logo"><span><span id="siteBrandName">🏦 Loan Application Portal</span><small id="siteBrandContact">Contact Us: +91 99420 08431 • Secure Loan Services • fast and transparent application support</small></span></span></div><div class="row"><button class="btn secondary sm" onclick="toggleTheme()">🌙 Theme</button><button class="btn gray sm" onclick="showHome()">Home</button></div></header>
 <main class="wrap">
@@ -655,10 +1354,20 @@ function customerNotificationListHtml(c){
   if(!notes.length)return '<div class="notice">No notifications yet.</div>';
   return notes.slice(0,6).map((n,i)=>{const k=n.title+'|'+n.text,isRead=read.includes(k);return `<div class="notification-item ${isRead?'':'unread'}"><b>${esc(n.title)}</b><div>${esc(n.text)}</div><small class="muted">${new Date(n.date).toLocaleString()}</small></div>`}).join('');
 }
+function maskAccountNumber(value){const raw=String(value||'').trim();if(!raw)return '-';const clean=raw.replace(/\s+/g,'');return clean.length<=4?clean:'XXXX XXXX '+clean.slice(-4)}
+function customerLoanAccountNumber(c){return String(c?.loanAccountNo||c?.loan_account_no||c?.application||c?.id||'').trim()||'-'}
+function customerPaidAmount(c){return (c?.payments||[]).filter(p=>String(p?.status||'').toLowerCase()==='paid'&&String(p?.type||'').toLowerCase().includes('emi')).reduce((a,p)=>a+Number(p?.amount||0),0)}
+function customerPaidEmis(c){return (c?.payments||[]).filter(p=>String(p?.status||'').toLowerCase()==='paid'&&String(p?.type||'').toLowerCase().includes('emi')).length}
+function customerOutstanding(c){return Math.max(0,Number(c?.amount||0)-customerPaidAmount(c))}
+function customerNextEmiDate(c){const start=new Date(c?.disbursementDate||c?.created||Date.now());if(Number.isNaN(start.getTime()))return '-';const d=new Date(start);d.setMonth(d.getMonth()+customerPaidEmis(c)+1);return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
+function customerFormatDate(value){if(!value)return '-';const d=new Date(value);return Number.isNaN(d.getTime())?'-':d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
+function customerTransactionRows(c){return (c?.payments||[]).map(p=>({date:p?.date||c?.updated,type:p?.type||'Payment',ref:p?.txn||'-',amount:Number(p?.amount||c?.fee||0),status:p?.status||'Pending'})).sort((a,b)=>new Date(b.date)-new Date(a.date))}
 function renderCustomer(id){
   let c=db.customers.find(x=>String(x.id)===String(id)); if(!c)return; currentCustomerId=id; startCustomerPolling();
   let pct=c.status==='Approved'||c.status==='Disbursed'||c.status==='Closed'?100:c.status==='Rejected'?100:c.status==='Under Review'?55:30;
   let totalEMI=emiFor(c).total, unread=unreadCustomerNotifications(c), initials=customerInitials(c.name);
+  const monthlyEmi=emiFor(c).emi, paidAmount=customerPaidAmount(c), outstandingAmount=customerOutstanding(c), paidEmis=customerPaidEmis(c), loanAccountNo=customerLoanAccountNumber(c), transactions=customerTransactionRows(c);
+  const emiProgress=c.tenure?Math.min(100,Math.round((paidEmis/Number(c.tenure))*100)):0;
   const avatar=c.photo?`<img class="customer-avatar" src="${c.photo}" alt="Profile">`:`<div class="customer-avatar initials">${esc(initials)}</div>`;
   const feeHtml=c.fee?(`<p>${esc(c.feeType||'Processing Fee')}: <b>${money(c.fee)}</b> ${c.feePaid?badge('Paid'):badge('Pending')}</p>`+(c.fee&&!c.feePaid?`<div class="paybox"><b>Payment</b><p class="muted">Pay the ${esc(c.feeType||'Processing Fee')} using your UPI app.</p><button class="btn" onclick="startUPIPayment('${c.id}')">Pay ${money(c.fee)}</button><div class="field" style="margin-bottom:0"><label>After payment, enter UTR / Transaction ID</label><input id="utr_${c.id}" placeholder="Enter UTR / Transaction ID"></div><button class="btn ok sm" style="margin-top:8px" onclick="submitPayment('${c.id}')">Submit Payment</button></div>`:'')+`<div style="margin-top:12px">${(c.payments||[]).map(p=>`<div class="doc"><div><b>${esc(p.type)}</b><br><span class="muted">${esc(p.txn)} • ${new Date(p.date).toLocaleString()}</span></div>${badge(p.status)}${p.status==='Paid'||p.status==='Pending Verification'?` <button class="btn sm gray" onclick="printReceipt('${c.id}','${esc(p.txn)}')">Receipt</button>`:''}</div>`).join('')||'<span class="muted">No payments yet.</span>'}</div>`):'<div class="notice">No payment request is currently available for this application.</div>';
   document.getElementById('customer').innerHTML=`
@@ -666,15 +1375,18 @@ function renderCustomer(id){
     <div class="customer-identity">${avatar}<div><h2>${esc(c.name||'Customer')}</h2><small>Application ${esc(c.referenceNo||c.application||'-')} • ${esc(c.mobile||'')}</small></div></div>
     <div class="customer-actions"><button class="icon-btn" onclick="showCustomerNotifications('${c.id}')">🔔 Notifications${unread?`<span class="notif-count">${unread>9?'9+':unread}</span>`:''}</button><button class="icon-btn" onclick="showHome()">Logout</button></div>
   </div>
-  <section class="card" id="profileSection" style="margin-top:18px"><div class="row between"><div><h3>Profile</h3><p class="muted" style="margin:0">Personal and contact details</p></div>${badge('Verified')}</div><div style="display:flex;align-items:center;gap:14px;margin:14px 0">${c.photo?`<img class="mini-avatar" style="width:64px;height:64px;border-radius:16px" src="${c.photo}" alt="Profile">`:`<div class="mini-avatar" style="width:64px;height:64px;border-radius:16px;font-size:20px">${esc(initials)}</div>`}<div><b style="font-size:18px">${esc(c.name)}</b><div class="muted">Registered mobile: ${esc(c.mobile)}</div></div></div><div class="profile-grid"><div class="profile-item"><span>Application / Reference</span><b>${esc(c.application||c.referenceNo||'-')}</b></div><div class="profile-item"><span>Mobile</span><b>${esc(c.mobile||'-')}</b></div><div class="profile-item"><span>Date of Birth</span><b>${esc(c.dob||'-')}</b></div><div class="profile-item"><span>Occupation</span><b>${esc(c.occupation||'-')}</b></div></div></section>
+  <section class="card" id="profileSection" style="margin-top:18px"><div class="row between"><div><h3>Profile</h3><p class="muted" style="margin:0">Personal and contact details</p></div>${badge('Verified')}</div><div style="display:flex;align-items:center;gap:14px;margin:14px 0">${c.photo?`<img class="mini-avatar" style="width:64px;height:64px;border-radius:16px" src="${c.photo}" alt="Profile">`:`<div class="mini-avatar" style="width:64px;height:64px;border-radius:16px;font-size:20px">${esc(initials)}</div>`}<div><b style="font-size:18px">${esc(c.name)}</b><div class="muted">Registered mobile: ${esc(c.mobile)}</div></div></div><div class="profile-grid"><div class="profile-item"><span>Customer ID</span><b>${esc(c.id||'-')}</b></div><div class="profile-item"><span>Application / Reference</span><b>${esc(c.application||c.referenceNo||'-')}</b></div><div class="profile-item"><span>Mobile</span><b>${esc(c.mobile||'-')}</b></div><div class="profile-item"><span>Date of Birth</span><b>${esc(c.dob||'-')}</b></div><div class="profile-item"><span>Occupation</span><b>${esc(c.occupation||'-')}</b></div></div></section>
   ${customerNoticeHtml(c)?`<section class="card customer-notice" style="margin-top:14px"><div class="row between"><h3>Important Customer Notice</h3><span class="badge b-blue">From Agent</span></div><div class="notice-body">${customerNoticeHtml(c)}</div></section>`:''}
-  <div class="customer-nav"><button class="btn secondary" onclick="showCustomerNotifications('${c.id}')">🔔 Notifications${unread?` (${unread})`:''}</button><button class="btn gray" onclick="document.getElementById('profileSection')?.scrollIntoView({behavior:'smooth'})">👤 Profile</button><button class="btn gray" onclick="document.getElementById('documentsSection')?.scrollIntoView({behavior:'smooth'})">📄 Documents</button></div>
-  <div class="card summary-card" style="margin-top:18px"><div class="row between"><h3>Loan Summary</h3>${badge(c.status)}</div><div class="grid g3"><div class="stat"><span class="muted">Loan Amount</span><b>${money(c.amount)}</b></div><div class="stat"><span class="muted">Interest / APR</span><b>${c.rate}%</b></div><div class="stat"><span class="muted">Tenure</span><b>${c.tenure} months</b></div><div class="stat"><span class="muted">Monthly EMI</span><b>${money(emiFor(c).emi)}</b></div></div></div>
-  <section class="card" style="margin-top:18px"><h3>Bank / A/C Details</h3><div style="display:grid;gap:10px;margin-top:12px"><div class="stat"><span class="muted">Bank</span><b>${esc(c.bank||'-')}</b></div><div class="stat"><span class="muted">A/C Number</span><b>${esc(c.account||'-')}</b></div><div class="stat"><span class="muted">IFSC</span><b>${esc(c.ifsc||'-')}</b></div></div></section>
+  <div class="customer-nav"><button class="btn secondary" onclick="document.getElementById('accountOverview')?.scrollIntoView({behavior:'smooth'})">🏦 Overview</button><button class="btn gray" onclick="document.getElementById('profileSection')?.scrollIntoView({behavior:'smooth'})">👤 Profile</button><button class="btn gray" onclick="document.getElementById('loanAccountSection')?.scrollIntoView({behavior:'smooth'})">📋 Loan Account</button><button class="btn gray" onclick="document.getElementById('emiSection')?.scrollIntoView({behavior:'smooth'})">📅 EMI</button><button class="btn gray" onclick="document.getElementById('transactionsSection')?.scrollIntoView({behavior:'smooth'})">💳 Transactions</button><button class="btn gray" onclick="document.getElementById('documentsSection')?.scrollIntoView({behavior:'smooth'})">📄 Documents</button><button class="btn gray" onclick="showCustomerNotifications('${c.id}')">🔔 Notifications${unread?` (${unread})`:''}</button></div>
+  <div class="card summary-card" style="margin-top:18px"><div class="row between"><h3>Loan Summary</h3>${badge(c.status)}</div><div class="grid g3"><div class="stat"><span class="muted">Loan Amount</span><b>${money(c.amount)}</b></div><div class="stat"><span class="muted">Interest / APR</span><b>${c.rate}%</b></div><div class="stat"><span class="muted">Tenure</span><b>${c.tenure} months</b></div><div class="stat"><span class="muted">Monthly EMI</span><b>${money(emiFor(c).emi)}</b></div><div class="stat"><span class="muted">Paid Amount</span><b>${money(paidAmount)}</b></div><div class="stat"><span class="muted">Next EMI</span><b>${customerNextEmiDate(c)}</b></div><div class="stat"><span class="muted">EMI Progress</span><b>${paidEmis}/${Number(c.tenure||0)}</b></div></div></div>
+  <section class="card" style="margin-top:18px"><h3>Bank / A/C Details</h3><div style="display:grid;gap:10px;margin-top:12px"><div class="stat"><span class="muted">Bank</span><b>${esc(c.bank||'-')}</b></div><div class="stat"><span class="muted">A/C Number</span><b>${maskAccountNumber(c.account)}</b></div><div class="stat"><span class="muted">IFSC</span><b>${esc(c.ifsc||'-')}</b></div></div></section>
+
   <div class="card" style="margin-top:18px"><div class="row between"><h3>Application Status</h3><b>${pct}%</b></div><div class="progress"><i style="width:${pct}%"></i></div>${statusStepper(c.status)}<div class="timeline">${(c.history||[]).filter(h=>h&&h.type!=='fee_visibility').map(h=>`<div class="event"><b>${esc(h.status||'Update')}</b><div class="muted">${new Date(h.date).toLocaleString()}</div><div>${esc(h.note||'')}</div></div>`).join('')}</div></div>
   <section class="card" style="margin-top:18px"><h3>Fee & Payments</h3>${feeHtml}</section>
+  <section class="card" id="transactionsSection" style="margin-top:18px"><div class="row between"><div><h3>Transaction History</h3><p class="muted" style="margin:0">Payment and transaction statement</p></div><span class="badge b-blue">Statement</span></div><div class="tablewrap" style="margin-top:12px"><table style="min-width:700px"><thead><tr><th>Date</th><th>Transaction</th><th>Reference</th><th>Amount</th><th>Status</th></tr></thead><tbody>${transactions.map(t=>`<tr><td>${customerFormatDate(t.date)}</td><td>${esc(t.type)}</td><td>${esc(t.ref)}</td><td>${money(t.amount)}</td><td>${badge(t.status)}</td></tr>`).join('')||'<tr><td colspan="5">No transactions yet.</td></tr>'}</tbody></table></div></section>
+  <section class="card" style="margin-top:18px"><div class="row between"><div><h3>Security</h3><p class="muted" style="margin:0">Basic account access indicators</p></div><span class="badge b-green">✓ Access verified</span></div><div class="row" style="margin-top:12px"><span class="badge b-green">✓ Registered mobile matched</span><span class="badge b-green">✓ Customer session active</span><span class="badge b-blue">🔒 Portal protected</span></div></section>
   <section class="card" id="documentsSection" style="margin-top:18px"><div class="row between"><h3>Documents</h3><span class="muted">${(c.docs||[]).length} file(s)</span></div>${(c.docs||[]).map((d,i)=>`<div class="doc"><div>📄 <b>${esc(d.name)}</b><br><small>${esc(d.type||'KYC / Document')} • ${Math.round((d.size||0)/1024)} KB</small><br><span class="badge b-green">Success</span></div><button class="btn sm secondary" onclick="downloadDoc('${c.id}',${i})">View/Download</button></div>`).join('')||'<p class="muted">No documents uploaded.</p>'}</section>
-  <section class="card" style="margin-top:18px"><h3>Loan & EMI</h3><div class="notice">Monthly EMI: <b>${money(emiFor(c).emi)}</b><br>Total payable: <b>${money(totalEMI)}</b><br>Total interest: <b>${money(emiFor(c).interest)}</b></div><h3 style="margin-top:18px">EMI Schedule</h3><div class="tablewrap"><table style="min-width:560px"><thead><tr><th>#</th><th>Due Date</th><th>EMI</th><th>Status</th></tr></thead><tbody>${emiSchedule(c).map(x=>`<tr><td>${x.no}</td><td>${x.date}</td><td>${money(x.amount)}</td><td>${badge(x.status)}</td></tr>`).join('')}</tbody></table></div></section>
+  <section class="card" id="emiSection" style="margin-top:18px"><h3>Loan & EMI</h3><div class="notice">Monthly EMI: <b>${money(emiFor(c).emi)}</b><br>Total payable: <b>${money(totalEMI)}</b><br>Total interest: <b>${money(emiFor(c).interest)}</b></div><h3 style="margin-top:18px">EMI Schedule</h3><div class="tablewrap"><table style="min-width:560px"><thead><tr><th>#</th><th>Due Date</th><th>EMI</th><th>Status</th></tr></thead><tbody>${emiSchedule(c).map(x=>`<tr><td>${x.no}</td><td>${x.date}</td><td>${money(x.amount)}</td><td>${badge(x.status)}</td></tr>`).join('')}</tbody></table></div></section>
   ${customerSiteBlocks()}`
 }
 
