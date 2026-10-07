@@ -1020,47 +1020,68 @@ function showCustomerLogin(){clearCustomerPolling();hideAll();const c=document.g
 },50)}
 async function customerLogin(m){
   m=String(m||'').replace(/\D/g,'');
-  if(m.length!==10){ alert('Please enter a valid 10-digit mobile number.'); return; }
+  if(m.length!==10){
+    alert('Please enter a valid 10-digit mobile number.');
+    return;
+  }
+
   try{
-    // Customer login must use a small, reliable lookup. Do not request large
-    // photo/document/payment/history fields during the login request.
-    // Also do not order by an optional timestamp column here.
-    const {data,error}=await supabaseClient.from('customers')
-      .select('id,name,mobile,application,amount,rate,tenure,fee,feepaid,status,message,bank,account,ifsc,emi,dob,email,address,occupation,created,updated')
-      .eq('mobile',m)
-      .limit(1);
+    const {data,error}=await supabaseClient.rpc(
+      'get_customer_by_mobile',
+      {p_mobile:m}
+    );
+
     if(error) throw error;
-    if(data && data.length){
-      const remote=normalizeSupabaseRow(data[0]);
-      const i=db.customers.findIndex(x=>String(x.mobile).replace(/\D/g,'')===m);
+
+    const row=Array.isArray(data)?data[0]:data;
+
+    if(row){
+      const remote=normalizeSupabaseRow(row);
+      const i=db.customers.findIndex(
+        x=>String(x.mobile).replace(/\D/g,'')===m
+      );
       const c=i>=0?mergeCustomer(db.customers[i],remote):remote;
-      if(i>=0) db.customers[i]=c; else db.customers.push(c);
+
+      if(i>=0) db.customers[i]=c;
+      else db.customers.push(c);
+
       persistLocal();
       hideAll();
       document.getElementById('customer').classList.remove('hidden');
       renderCustomer(c.id);
       return;
     }
-    const local=db.customers.find(x=>String(x.mobile).replace(/\D/g,'')===m);
+
+    const local=db.customers.find(
+      x=>String(x.mobile).replace(/\D/g,'')===m
+    );
+
     if(local){
       hideAll();
       document.getElementById('customer').classList.remove('hidden');
       renderCustomer(local.id);
       return;
     }
+
     alert('Customer not found in Supabase. Please save/register this mobile from the Agent Panel first.');
   }catch(e){
     console.error('Customer login failed:',e);
-    // If the same customer is already cached locally, never block login just
-    // because an optional Supabase field/API request failed.
-    const local=db.customers.find(x=>String(x.mobile).replace(/\D/g,'')===m);
+
+    const local=db.customers.find(
+      x=>String(x.mobile).replace(/\D/g,'')===m
+    );
+
     if(local){
       hideAll();
       document.getElementById('customer').classList.remove('hidden');
       renderCustomer(local.id);
       return;
     }
-    alert('Supabase customer lookup failed. Check the customers table RLS/API access.');
+
+    alert(
+      'Supabase customer lookup failed: '+
+      [e?.message,e?.details,e?.hint,e?.code].filter(Boolean).join(' | ')
+    );
   }
 }
 function statusStepper(status){
